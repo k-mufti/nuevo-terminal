@@ -1,0 +1,589 @@
+[
+  {
+    "id": "bbc-world",
+    "name": "BBC World",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+  },
+  {
+    "id": "al-jazeera",
+    "name": "Al Jazeera",
+    "publisher": "Al Jazeera",
+    "category": "world",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "bust": true,
+    "classify": true
+  },
+  {
+    "id": "the-guardian-world",
+    "name": "The Guardian World",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/world/rss"
+  },
+  {
+    "id": "nyt-world",
+    "name": "NYT World",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "bust": true
+  },
+  {
+    "id": "npr-world",
+    "name": "NPR World",
+    "publisher": "NPR",
+    "category": "world",
+    "url": "https://feeds.npr.org/1004/rss.xml",
+    "bust": true
+  },
+  {
+    "id": "dw",
+    "name": "DW",
+    "publisher": "DW",
+    "category": "world",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "classify": true
+  },
+  {
+    "id": "france-24",
+    "name": "France 24",
+    "publisher": "France 24",
+    "category": "world",
+    "url": "https://www.france24.com/en/rss",
+    "classify": true
+  },
+  {
+    "id": "cbs-news-world",
+    "name": "CBS News World",
+    "publisher": "CBS",
+    "category": "world",
+    "url": "https://www.cbsnews.com/latest/rss/world",
+    "bust": true
+  },
+  {
+    "id": "abc-news-intl",
+    "name": "ABC News Intl",
+    "publisher": "ABC",
+    "category": "world",
+    "url": "https://abcnews.go.com/abcnews/internationalheadlines"
+  },
+  {
+    "id": "sky-news-world",
+    "name": "Sky News World",
+    "publisher": "Sky",
+    "category": "world",
+    "url": "https://feeds.skynews.com/feeds/rss/world.xml"
+  },
+  {
+    "id": "euronews",
+    "name": "Euronews",
+    "publisher": "Euronews",
+    "category": "world",
+    "url": "https://www.euronews.com/rss",
+    "classify": true
+  },
+  {
+    "id": "npr-news",
+    "name": "NPR News",
+    "publisher": "NPR",
+    "category": "us",
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "bust": true
+  },
+  {
+    "id": "nyt-us",
+    "name": "NYT US",
+    "publisher": "NYT",
+    "category": "us",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "bust": true
+  },
+  {
+    "id": "cbs-news",
+    "name": "CBS News",
+    "publisher": "CBS",
+    "category": "us",
+    "url": "https://www.cbsnews.com/latest/rss/main",
+    "bust": true
+  },
+  {
+    "id": "abc-news",
+    "name": "ABC News",
+    "publisher": "ABC",
+    "category": "us",
+    "url": "https://abcnews.go.com/abcnews/topstories"
+  },
+  {
+    "id": "politico",
+    "name": "Politico",
+    "publisher": "Politico",
+    "category": "us",
+    "url": "https://rss.politico.com/politics-news.xml"
+  },
+  {
+    "id": "the-hill",
+    "name": "The Hill",
+    "publisher": "The Hill",
+    "category": "us",
+    "url": "https://thehill.com/news/feed/",
+    "bust": true
+  },
+  {
+    "id": "fox-news",
+    "name": "Fox News",
+    "publisher": "Fox News",
+    "category": "us",
+    "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+    "bust": true
+  },
+  {
+    "id": "pbs-newshour",
+    "name": "PBS NewsHour",
+    "publisher": "PBS NewsHour",
+    "category": "us",
+    "url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "bust": true
+  },
+  {
+    "id": "axios",
+    "name": "Axios",
+    "publisher": "Axios",
+    "category": "us",
+    "url": "https://api.axios.com/feed/",
+    "bust": true
+  },
+  {
+    "id": "cnbc-top",
+    "name": "CNBC Top",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+  },
+  {
+    "id": "cnbc-markets",
+    "name": "CNBC Markets",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html"
+  },
+  {
+    "id": "marketwatch",
+    "name": "MarketWatch",
+    "publisher": "MarketWatch",
+    "category": "markets",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+  },
+  {
+    "id": "wsj-markets",
+    "name": "WSJ Markets",
+    "publisher": "WSJ",
+    "category": "markets",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"
+  },
+  {
+    "id": "nyt-business",
+    "name": "NYT Business",
+    "publisher": "NYT",
+    "category": "markets",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "bust": true
+  },
+  {
+    "id": "bbc-business",
+    "name": "BBC Business",
+    "publisher": "BBC",
+    "category": "markets",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+  },
+  {
+    "id": "guardian-business",
+    "name": "Guardian Business",
+    "publisher": "Guardian",
+    "category": "markets",
+    "url": "https://www.theguardian.com/uk/business/rss"
+  },
+  {
+    "id": "ft",
+    "name": "FT",
+    "publisher": "FT",
+    "category": "markets",
+    "url": "https://www.ft.com/rss/home"
+  },
+  {
+    "id": "investing-com",
+    "name": "Investing.com",
+    "publisher": "Investing.com",
+    "category": "markets",
+    "url": "https://www.investing.com/rss/news.rss"
+  },
+  {
+    "id": "coindesk",
+    "name": "CoinDesk",
+    "publisher": "CoinDesk",
+    "category": "markets",
+    "url": "https://www.coindesk.com/arc/outboundfeeds/rss/"
+  },
+  {
+    "id": "cointelegraph",
+    "name": "Cointelegraph",
+    "publisher": "Cointelegraph",
+    "category": "markets",
+    "url": "https://cointelegraph.com/rss",
+    "bust": true
+  },
+  {
+    "id": "seeking-alpha",
+    "name": "Seeking Alpha",
+    "publisher": "Seeking Alpha",
+    "category": "markets",
+    "url": "https://seekingalpha.com/market_currents.xml"
+  },
+  {
+    "id": "hacker-news",
+    "name": "Hacker News",
+    "publisher": "Hacker News",
+    "category": "tech",
+    "url": "https://hnrss.org/frontpage"
+  },
+  {
+    "id": "the-verge",
+    "name": "The Verge",
+    "publisher": "The Verge",
+    "category": "tech",
+    "url": "https://www.theverge.com/rss/index.xml"
+  },
+  {
+    "id": "ars-technica",
+    "name": "Ars Technica",
+    "publisher": "Ars Technica",
+    "category": "tech",
+    "url": "https://feeds.arstechnica.com/arstechnica/index"
+  },
+  {
+    "id": "techcrunch",
+    "name": "TechCrunch",
+    "publisher": "TechCrunch",
+    "category": "tech",
+    "url": "https://techcrunch.com/feed/",
+    "bust": true
+  },
+  {
+    "id": "wired",
+    "name": "Wired",
+    "publisher": "Wired",
+    "category": "tech",
+    "url": "https://www.wired.com/feed/rss",
+    "bust": true
+  },
+  {
+    "id": "engadget",
+    "name": "Engadget",
+    "publisher": "Engadget",
+    "category": "tech",
+    "url": "https://www.engadget.com/rss.xml",
+    "bust": true
+  },
+  {
+    "id": "bbc-technology",
+    "name": "BBC Technology",
+    "publisher": "BBC",
+    "category": "tech",
+    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml"
+  },
+  {
+    "id": "nyt-technology",
+    "name": "NYT Technology",
+    "publisher": "NYT",
+    "category": "tech",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "bust": true
+  },
+  {
+    "id": "mit-tech-review",
+    "name": "MIT Tech Review",
+    "publisher": "MIT Tech Review",
+    "category": "tech",
+    "url": "https://www.technologyreview.com/feed/",
+    "bust": true
+  },
+  {
+    "id": "the-register",
+    "name": "The Register",
+    "publisher": "The Register",
+    "category": "tech",
+    "url": "https://www.theregister.com/headlines.atom"
+  },
+  {
+    "id": "9to5mac",
+    "name": "9to5Mac",
+    "publisher": "9to5Mac",
+    "category": "tech",
+    "url": "https://9to5mac.com/feed/",
+    "bust": true
+  },
+  {
+    "id": "guardian-tech",
+    "name": "Guardian Tech",
+    "publisher": "Guardian",
+    "category": "tech",
+    "url": "https://www.theguardian.com/uk/technology/rss"
+  },
+  {
+    "id": "bbc-middle-east",
+    "name": "BBC Middle East",
+    "publisher": "BBC",
+    "category": "mideast",
+    "url": "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml"
+  },
+  {
+    "id": "guardian-middle-east",
+    "name": "Guardian Middle East",
+    "publisher": "Guardian",
+    "category": "mideast",
+    "url": "https://www.theguardian.com/world/middleeast/rss"
+  },
+  {
+    "id": "nyt-middle-east",
+    "name": "NYT Middle East",
+    "publisher": "NYT",
+    "category": "mideast",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
+    "bust": true
+  },
+  {
+    "id": "times-of-israel",
+    "name": "Times of Israel",
+    "publisher": "Times of Israel",
+    "category": "mideast",
+    "url": "https://www.timesofisrael.com/feed/"
+  },
+  {
+    "id": "al-monitor",
+    "name": "Al-Monitor",
+    "publisher": "Al-Monitor",
+    "category": "mideast",
+    "url": "https://www.al-monitor.com/rss",
+    "bust": true
+  },
+  {
+    "id": "arab-news",
+    "name": "Arab News",
+    "publisher": "Arab News",
+    "category": "mideast",
+    "url": "https://www.arabnews.com/rss.xml"
+  },
+  {
+    "id": "the-national",
+    "name": "The National",
+    "publisher": "The National",
+    "category": "mideast",
+    "url": "https://www.thenationalnews.com/arc/outboundfeeds/rss/?outputType=xml"
+  },
+  {
+    "id": "asharq-al-awsat",
+    "name": "Asharq Al-Awsat",
+    "publisher": "Asharq Al-Awsat",
+    "category": "mideast",
+    "url": "https://english.aawsat.com/feed",
+    "bust": true
+  },
+  {
+    "id": "jerusalem-post",
+    "name": "Jerusalem Post",
+    "publisher": "Jerusalem Post",
+    "category": "mideast",
+    "url": "https://www.jpost.com/rss/rssfeedsheadlines.aspx"
+  },
+  {
+    "id": "haaretz",
+    "name": "Haaretz",
+    "publisher": "Haaretz",
+    "category": "mideast",
+    "url": "https://www.haaretz.com/srv/haaretz-latest-headlines"
+  },
+  {
+    "id": "nasa",
+    "name": "NASA",
+    "publisher": "NASA",
+    "category": "science",
+    "url": "https://www.nasa.gov/feed/",
+    "bust": true
+  },
+  {
+    "id": "sciencedaily",
+    "name": "ScienceDaily",
+    "publisher": "ScienceDaily",
+    "category": "science",
+    "url": "https://www.sciencedaily.com/rss/all.xml"
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "publisher": "Nature",
+    "category": "science",
+    "url": "https://www.nature.com/nature.rss",
+    "bust": true
+  },
+  {
+    "id": "nyt-science",
+    "name": "NYT Science",
+    "publisher": "NYT",
+    "category": "science",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+    "bust": true
+  },
+  {
+    "id": "bbc-science",
+    "name": "BBC Science",
+    "publisher": "BBC",
+    "category": "science",
+    "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+  },
+  {
+    "id": "espn",
+    "name": "ESPN",
+    "publisher": "ESPN",
+    "category": "sports",
+    "url": "https://www.espn.com/espn/rss/news"
+  },
+  {
+    "id": "bbc-sport",
+    "name": "BBC Sport",
+    "publisher": "BBC",
+    "category": "sports",
+    "url": "https://feeds.bbci.co.uk/sport/rss.xml"
+  },
+  {
+    "id": "guardian-sport",
+    "name": "Guardian Sport",
+    "publisher": "Guardian",
+    "category": "sports",
+    "url": "https://www.theguardian.com/uk/sport/rss"
+  },
+  {
+    "id": "sky-sports",
+    "name": "Sky Sports",
+    "publisher": "Sky",
+    "category": "sports",
+    "url": "https://www.skysports.com/rss/12040"
+  },
+  {
+    "id": "cbs-sports",
+    "name": "CBS Sports",
+    "publisher": "CBS",
+    "category": "sports",
+    "url": "https://www.cbssports.com/rss/headlines/"
+  },
+  {
+    "id": "yahoo-sports",
+    "name": "Yahoo Sports",
+    "publisher": "Yahoo",
+    "category": "sports",
+    "url": "https://sports.yahoo.com/rss/"
+  },
+  {
+    "id": "the-athletic",
+    "name": "The Athletic",
+    "publisher": "NYT",
+    "category": "sports",
+    "url": "https://www.nytimes.com/athletic/rss/news/"
+  },
+  {
+    "id": "reuters",
+    "name": "Reuters",
+    "publisher": "Reuters",
+    "category": "world",
+    "url": "https://www.reuters.com/arc/outboundfeeds/news-sitemap-index/?outputType=xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "ap",
+    "name": "AP",
+    "publisher": "AP",
+    "category": "us",
+    "url": "https://apnews.com/news-sitemap-content.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "cnn",
+    "name": "CNN",
+    "publisher": "CNN",
+    "category": "world",
+    "url": "https://www.cnn.com/sitemap/news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "bloomberg",
+    "name": "Bloomberg",
+    "publisher": "Bloomberg",
+    "category": "markets",
+    "url": "https://www.bloomberg.com/sitemaps/news/latest.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "nbc-news",
+    "name": "NBC News",
+    "publisher": "NBC",
+    "category": "us",
+    "url": "https://www.nbcnews.com/sitemap/nbcnews/sitemap-news",
+    "kind": "sitemap"
+  },
+  {
+    "id": "business-insider",
+    "name": "Business Insider",
+    "publisher": "Business Insider",
+    "category": "markets",
+    "url": "https://www.businessinsider.com/sitemap/google-news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "bbc-sitemap",
+    "name": "BBC (sitemap)",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://www.bbc.com/sitemaps/https-index-com-news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "npr-sitemap",
+    "name": "NPR (sitemap)",
+    "publisher": "NPR",
+    "category": "us",
+    "url": "https://googlecrawl.npr.org/news/sitemap_news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "wsj-sitemap",
+    "name": "WSJ (sitemap)",
+    "publisher": "WSJ",
+    "category": "markets",
+    "url": "https://www.wsj.com/wsjsitemaps/wsj_google_news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "guardian-sitemap",
+    "name": "Guardian (sitemap)",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/sitemaps/news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "times-of-israel-sitemap",
+    "name": "Times of Israel (sitemap)",
+    "publisher": "Times of Israel",
+    "category": "mideast",
+    "url": "https://www.timesofisrael.com/news-sitemap.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "marketwatch-sitemap",
+    "name": "MarketWatch (sitemap)",
+    "publisher": "MarketWatch",
+    "category": "markets",
+    "url": "https://www.marketwatch.com/mw_news_sitemap.xml",
+    "kind": "sitemap"
+  }
+]

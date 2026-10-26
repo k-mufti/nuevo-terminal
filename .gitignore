@@ -1,0 +1,6 @@
+# Build output and local data
+server/bin/
+server/data/
+web/dist/
+web/node_modules/
+.DS_Store
