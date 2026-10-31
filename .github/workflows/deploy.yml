@@ -36,6 +36,10 @@ jobs:
 
       - name: SSH key
         run: |
+          if [ -z "${{ secrets.VPS_HOST }}" ] || [ -z "${{ secrets.VPS_USER }}" ] || [ -z "${{ secrets.VPS_SSH_KEY }}" ]; then
+            echo "::error::Missing repo secrets VPS_HOST, VPS_USER or VPS_SSH_KEY. See deploy/README.md."
+            exit 1
+          fi
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
