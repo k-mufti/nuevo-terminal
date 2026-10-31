@@ -217,7 +217,14 @@ func (e *Engine) Snapshot(from, to time.Time) ([]WireCluster, uint64) {
 		}
 		out = append(out, c.wire())
 	}
-	sort.Slice(out, func(i, j int) bool { return out[i].Time > out[j].Time })
+	// Ties broken by ID so the same state always encodes to the same bytes
+	// (the server caches compressed chunks by content).
+	sort.Slice(out, func(i, j int) bool {
+		if out[i].Time != out[j].Time {
+			return out[i].Time > out[j].Time
+		}
+		return out[i].ID < out[j].ID
+	})
 	if len(out) > maxSnapshot {
 		out = out[:maxSnapshot]
 	}

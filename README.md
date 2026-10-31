@@ -23,7 +23,7 @@ make web            # Vite on http://localhost:5173 (proxies /api to :8080)
 
 ```
 ~66 RSS/Atom feeds ─┐   polled 30s–2min (follows each feed's cache headers;
-12 news sitemaps ───┤   big publishers' CDN caches skipped), ETag/304 aware,
+20 news sitemaps ───┤   big publishers' CDN caches skipped), ETag/304 aware,
 WebSub pushes ──────┘   or pushed by WebSub hubs (needs -public-url)
         │
         ▼
@@ -60,14 +60,14 @@ Yahoo Finance ──┘ every 30s
 ## Measuring it
 
 - `GET /api/metrics`: publish→seen lag by source kind, sitemap-vs-RSS races, who reports first, snapshot cost, memory.
-- `GET /api/feeds`: per-source health, poll interval, errors.
+- `GET /api/feeds`: per-source health, poll interval, errors, network vs processing time, and publish→seen lag.
 - `cd server && go test ./internal/cluster -bench .`: ingest, snapshot and fan-out benchmarks.
 - `NUEVO_DB=data/nuevo.db go test ./internal/classify -run Accuracy -v`: classifier accuracy on stored headlines.
 
 ## Keyboard
 
-`1`–`7` panels · `j`/`k` stories · `h`/`l` panels · `Enter` open · `f` full-screen · `b` breaking ·
-`/` command bar (`TECH <GO>`, `ALL`, `BRK`, or words to filter) · `Esc` back · `?` help
+`1`–`8` panels (`8` = all news, full screen) · `j`/`k` stories · `h`/`l` panels · `Enter` open · `f` full-screen · `b` breaking ·
+`/` command bar (`TECH <GO>`, `ALL` for every story, `HOME` for the grid, `BRK`, or words to filter) · `Esc` back · `?` help
 
 ## Server flags
 

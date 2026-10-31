@@ -21,7 +21,8 @@ export interface Cluster {
   n: number; // distinct publishers
   brk: boolean;
   brkAt?: number;
-  items?: Item[]; // present only when more than one outlet covered it
+  items?: Item[]; // every story in the cluster, lead first; only when more than one
+  more?: Item[]; // on the wire: the stories after the lead (becomes items)
 }
 
 export interface Quote {
@@ -47,4 +48,5 @@ export interface PanelDef {
   aliases: string[];
   cat: string; // server category
   title: string;
+  solo?: boolean; // full-screen only, not shown in the grid
 }

@@ -2,7 +2,7 @@
 // sorted list per panel. Bursts of updates are coalesced into a single
 // re-sort per animation frame so the UI never does more work than it can show.
 import { batch, createSignal, type Accessor, type Setter } from "solid-js";
-import { PANELS } from "./panels";
+import { ALL_CAT, PANELS } from "./panels";
 import type { Cluster, Quote, Status } from "./types";
 
 export type Conn = "connecting" | "live" | "down";
@@ -52,13 +52,14 @@ function schedule() {
 function flush() {
   scheduled = false;
   const cats = dirtyAll ? [...lists.keys()] : [...dirtyCats].filter((c) => lists.has(c));
+  if (cats.length && !cats.includes(ALL_CAT)) cats.push(ALL_CAT);
   dirtyCats = new Set();
   dirtyAll = false;
 
   const all = [...clusters.values()];
   batch(() => {
     for (const cat of cats) {
-      lists.get(cat)![1](all.filter((c) => c.cats.includes(cat)).sort(byTimeDesc));
+      lists.get(cat)![1]((cat === ALL_CAT ? [...all] : all.filter((c) => c.cats.includes(cat))).sort(byTimeDesc));
     }
     setBreaking(all.filter((c) => c.brk).sort((a, b) => (b.brkAt ?? 0) - (a.brkAt ?? 0)));
     const since = Date.now() - TOP_WINDOW;
@@ -75,6 +76,11 @@ function flush() {
 }
 
 function upsert(c: Cluster, markFresh: boolean) {
+  // The server leaves the lead story out of the item list; put it back.
+  if (c.more) {
+    c.items = [{ src: c.src, pub: c.pub, title: c.title, link: c.link, time: c.time }, ...c.more];
+    delete c.more;
+  }
   const prev = clusters.get(c.id);
   if (prev) for (const cat of prev.cats) dirtyCats.add(cat);
   else if (markFresh) freshUntil.set(c.id, Date.now() + FRESH_MS);

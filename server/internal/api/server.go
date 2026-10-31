@@ -2,8 +2,6 @@
 package api
 
 import (
-	"bytes"
-	"compress/gzip"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -50,6 +48,7 @@ type snapCache struct {
 	served  int64
 	lastRaw int
 	lastGz  int
+	chunks  chunkCache
 }
 
 type snapKey struct {
@@ -147,14 +146,10 @@ func (s *Server) snapshotBytes(from, to int64) (seq uint64, raw, gz []byte, err 
 		toT = time.UnixMilli(to)
 	}
 	clusters, seq := s.Engine.Snapshot(fromT, toT)
-	raw, err = json.Marshal(snapshotBody{Seq: seq, Clusters: clusters})
+	raw, gz, err = c.chunks.encode(seq, clusters)
 	if err != nil {
 		return 0, nil, nil, err
 	}
-	var buf bytes.Buffer
-	zw, _ := gzip.NewWriterLevel(&buf, gzip.DefaultCompression)
-	zw.Write(raw)
-	zw.Close()
 	// Keep only current-version entries (plus anything used in the last few
 	// seconds, for clients mid-way through their two requests).
 	for k, e := range c.entries {
@@ -162,11 +157,11 @@ func (s *Server) snapshotBytes(from, to int64) (seq uint64, raw, gz []byte, err 
 			delete(c.entries, k)
 		}
 	}
-	c.entries[snapKey{seq, from, to}] = &snapEntry{raw: raw, gz: buf.Bytes(), used: time.Now()}
+	c.entries[snapKey{seq, from, to}] = &snapEntry{raw: raw, gz: gz, used: time.Now()}
 	c.buildMs = float64(time.Since(t0).Microseconds()) / 1000
 	c.builds++
-	c.lastRaw, c.lastGz = len(raw), buf.Len()
-	return seq, raw, buf.Bytes(), nil
+	c.lastRaw, c.lastGz = len(raw), len(gz)
+	return seq, raw, gz, nil
 }
 
 func (s *Server) snapshot(w http.ResponseWriter, r *http.Request) {
@@ -298,6 +293,7 @@ func (s *Server) metrics(w http.ResponseWriter, r *http.Request) {
 	snap := map[string]any{
 		"lastRawKB": s.snap.lastRaw / 1024, "lastGzipKB": s.snap.lastGz / 1024,
 		"buildMs": s.snap.buildMs, "builds": s.snap.builds, "served": s.snap.served, "cached": len(s.snap.entries),
+		"chunkHitPct": pctOf(s.snap.chunks.hits, s.snap.chunks.all),
 	}
 	s.snap.mu.Unlock()
 	writeJSON(w, map[string]any{
@@ -409,4 +405,11 @@ func spa(dir string) http.Handler {
 		}
 		fs.ServeHTTP(w, r)
 	})
+}
+
+func pctOf(a, b int64) float64 {
+	if b == 0 {
+		return 0
+	}
+	return float64(a*1000/b) / 10
 }

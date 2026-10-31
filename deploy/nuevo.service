@@ -1,0 +1,23 @@
+# /etc/systemd/system/nuevo.service
+[Unit]
+Description=nuevo-rss news terminal
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=nuevo
+Group=nuevo
+WorkingDirectory=/opt/nuevo
+# Only nginx talks to it; port 4000 is not exposed publicly.
+# -public-url turns on WebSub push (faster stories); needs HTTPS working first.
+ExecStart=/opt/nuevo/nuevo -addr 127.0.0.1:4000 -feeds /opt/nuevo/feeds.json -db /opt/nuevo/data/nuevo.db -web /opt/nuevo/web -public-url https://nevarmiss.com
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/nuevo/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

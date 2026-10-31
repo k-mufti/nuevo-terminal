@@ -1,4 +1,8 @@
-import type { PanelDef } from "./types";
+import type { Cluster, PanelDef } from "./types";
+
+export const ALL_CAT = "all";
+
+export const inPanel = (p: PanelDef, c: Cluster) => p.cat === ALL_CAT || c.cats.includes(p.cat);
 
 // Order = number key. Categories match server/feeds.json.
 export const PANELS: PanelDef[] = [
@@ -9,6 +13,8 @@ export const PANELS: PanelDef[] = [
   { code: "MIDE", aliases: ["ME", "MIDEAST", "MIDDLEEAST"], cat: "mideast", title: "Middle East" },
   { code: "SCI", aliases: ["SCIENCE"], cat: "science", title: "Science" },
   { code: "SPRT", aliases: ["SPORT", "SPORTS"], cat: "sports", title: "Sports" },
+  // Every story from every panel. Opens full-screen; the grid has no room for it.
+  { code: "ALL", aliases: ["NEWS", "WIRE", "EVERYTHING"], cat: ALL_CAT, title: "All News", solo: true },
 ];
 
 export function findPanel(cmd: string): number {

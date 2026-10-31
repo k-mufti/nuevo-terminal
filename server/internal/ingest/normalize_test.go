@@ -1,6 +1,13 @@
 package ingest
 
-import "testing"
+import (
+	"bytes"
+	"compress/gzip"
+	"testing"
+	"time"
+
+	"nuevo-rss/internal/cluster"
+)
 
 func TestCanonicalURL(t *testing.T) {
 	cases := map[string]string{
@@ -81,5 +88,31 @@ func TestLooksEnglish(t *testing.T) {
 	}
 	if !looksEnglish("Real Madrid beat Barcelona in El Clasico") {
 		t.Error("English with Spanish names rejected")
+	}
+}
+
+func TestGunzipAndHasTime(t *testing.T) {
+	var buf bytes.Buffer
+	zw := gzip.NewWriter(&buf)
+	zw.Write([]byte("<urlset/>"))
+	zw.Close()
+	got, err := gunzip(buf.Bytes())
+	if err != nil || string(got) != "<urlset/>" {
+		t.Fatalf("gunzip = %q, %v", got, err)
+	}
+
+	now := time.Date(2026, 10, 28, 15, 4, 5, 0, time.UTC)
+	cases := []struct {
+		pub  time.Time
+		want bool
+	}{
+		{now.Add(-time.Minute), true},
+		{now, false}, // no date in the feed
+		{time.Date(2026, 10, 28, 0, 0, 0, 0, time.UTC), false}, // date only
+	}
+	for _, c := range cases {
+		if got := hasTime(&cluster.Story{Published: c.pub, Seen: now}); got != c.want {
+			t.Errorf("hasTime(%v) = %v, want %v", c.pub, got, c.want)
+		}
 	}
 }

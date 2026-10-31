@@ -5,7 +5,7 @@ import MarketStrip from "./components/MarketStrip";
 import Panel from "./components/Panel";
 import Ticker from "./components/Ticker";
 import { ago } from "./format";
-import { findPanel, PANELS } from "./panels";
+import { findPanel, inPanel, PANELS } from "./panels";
 import { breaking, conn, connect, latest, loaded, markets, panelList, status, top } from "./store";
 import type { Cluster } from "./types";
 
@@ -20,7 +20,7 @@ function haystack(c: Cluster): string {
   return h;
 }
 
-const COMMANDS = ["ALL", "HOME", "MAIN", "HELP", "BRK", "BREAKING", "CLR", "CLEAR"];
+const COMMANDS = ["HOME", "MAIN", "GRID", "HELP", "BRK", "BREAKING", "CLR", "CLEAR"];
 const stripGo = (s: string) => s.trim().replace(/\s*<GO>\s*$/i, "").trim();
 const asCommand = (s: string): string | null => {
   const t = stripGo(s).replace(/\s+GO$/i, "").toUpperCase();
@@ -65,7 +65,22 @@ export default function App() {
 
   const activate = (i: number) => {
     setActive(i);
-    if (maxed() !== null) setMaxed(i);
+    if (maxed() !== null || PANELS[i].solo) setMaxed(i);
+  };
+
+  // Leave full screen. A full-screen-only panel can't stay active in the grid.
+  const exitMax = () => {
+    if (PANELS[active()].solo) setActive(0);
+    setMaxed(null);
+  };
+  const toggleMax = (i = active()) => (maxed() === i ? exitMax() : (setActive(i), setMaxed(i)));
+
+  // h/l cycling skips full-screen-only panels while the grid is showing.
+  const step = (delta: number) => {
+    let i = active();
+    do i = (i + delta + PANELS.length) % PANELS.length;
+    while (maxed() === null && PANELS[i].solo);
+    activate(i);
   };
 
   const select = (i: number, id: string) => setSelected((s) => ({ ...s, [PANELS[i].code]: id }));
@@ -96,7 +111,7 @@ export default function App() {
   // Show a cluster: prefer the current panel, otherwise the first panel it belongs to.
   const reveal = (c: Cluster) => {
     let i = active();
-    if (!c.cats.includes(PANELS[i].cat)) i = PANELS.findIndex((p) => c.cats.includes(p.cat));
+    if (!inPanel(PANELS[i], c)) i = PANELS.findIndex((p) => inPanel(p, c));
     if (i < 0) return;
     if (!views[i]().some((x) => x.id === c.id)) clearFilter();
     activate(i);
@@ -118,8 +133,8 @@ export default function App() {
         setActive(p);
         setMaxed(p);
         flash(`${PANELS[p].code} · ${PANELS[p].title}`);
-      } else if (["ALL", "HOME", "MAIN"].includes(command)) {
-        setMaxed(null);
+      } else if (["HOME", "MAIN", "GRID"].includes(command)) {
+        exitMax();
       } else if (command === "HELP") {
         setHelp(true);
       } else if (command === "BRK" || command === "BREAKING") {
@@ -182,11 +197,11 @@ export default function App() {
         break;
       case "h":
       case "ArrowLeft":
-        activate((active() + PANELS.length - 1) % PANELS.length);
+        step(-1);
         break;
       case "l":
       case "ArrowRight":
-        activate((active() + 1) % PANELS.length);
+        step(1);
         break;
       case "Enter":
       case "o":
@@ -194,7 +209,8 @@ export default function App() {
         break;
       case "f":
       case "z":
-        setMaxed(maxed() === null ? active() : null);
+        if (maxed() === null) setMaxed(active());
+        else exitMax();
         break;
       case "b":
         jumpBreaking();
@@ -204,7 +220,7 @@ export default function App() {
         break;
       case "Escape":
         if (query()) clearFilter();
-        else if (maxed() !== null) setMaxed(null);
+        else if (maxed() !== null) exitMax();
         else setSelected((s) => ({ ...s, [PANELS[active()].code]: "" }));
         break;
       default:
@@ -320,7 +336,7 @@ export default function App() {
         </Show>
         <For each={PANELS}>
           {(p, i) => (
-            <div class="cell" classList={{ hidden: maxed() !== null && maxed() !== i() }}>
+            <div class="cell" classList={{ hidden: maxed() === null ? !!p.solo : maxed() !== i() }}>
               <Panel
                 def={p}
                 num={i() + 1}
@@ -335,7 +351,7 @@ export default function App() {
                 }}
                 onActivate={() => setActive(i())}
                 onOpen={open}
-                onMaximize={() => setMaxed(maxed() === i() ? null : i())}
+                onMaximize={() => toggleMax(i())}
               />
             </div>
           )}

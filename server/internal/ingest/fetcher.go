@@ -4,6 +4,7 @@ package ingest
 
 import (
 	"bytes"
+	"compress/gzip"
 	"context"
 	"errors"
 	"fmt"
@@ -28,11 +29,13 @@ import (
 )
 
 const (
-	userAgent    = "Mozilla/5.0 (compatible; nuevo-rss/0.1)"
-	maxBody      = 8 << 20
-	maxBackoff   = 30 * time.Minute
-	concurrency  = 16
-	fetchTimeout = 20 * time.Second
+	userAgent  = "Mozilla/5.0 (compatible; nuevo-rss/0.1)"
+	maxBody    = 8 << 20
+	maxBackoff = 30 * time.Minute
+	// blockedBackoff applies after many 401/403s in a row.
+	blockedBackoff = 2 * time.Hour
+	concurrency    = 16
+	fetchTimeout   = 20 * time.Second
 	// Feeds whose CDN cache is shorter than the default interval are polled
 	// as often as the cache allows, but never more than once per minInterval.
 	minInterval = 30 * time.Second
@@ -62,25 +65,41 @@ type FeedStatus struct {
 	Fails     int       `json:"fails"`
 	Items     int       `json:"items"`    // items in the last parsed response
 	NewTotal  int       `json:"newTotal"` // new stories since startup
-	LatencyMs int64     `json:"latencyMs"`
+	LatencyMs int64     `json:"latencyMs"` // network: request until body read
+	ProcessMs int64     `json:"processMs"` // parse, cluster, save
 	Interval  int       `json:"intervalSec"` // current poll interval
 	NextFetch time.Time `json:"nextFetch"`
 	Hub       string    `json:"hub,omitempty"` // WebSub hub, if the feed has one
 	Pushes    int       `json:"pushes"`        // fetches triggered by WebSub
+	Lag       *LagStats `json:"lag,omitempty"` // publish → first seen, recent stories
 }
 
 type lagRing struct {
 	vals []time.Duration
 	pos  int
+	cap  int // 0 means lagSamples
+}
+
+func (r *lagRing) stats() (LagStats, bool) {
+	if len(r.vals) == 0 {
+		return LagStats{}, false
+	}
+	l := append([]time.Duration(nil), r.vals...)
+	sort.Slice(l, func(i, j int) bool { return l[i] < l[j] })
+	return LagStats{Samples: len(l), P50: l[len(l)/2].Seconds(), P90: l[len(l)*9/10].Seconds()}, true
 }
 
 func (r *lagRing) add(d time.Duration) {
-	if len(r.vals) < lagSamples {
+	n := r.cap
+	if n == 0 {
+		n = lagSamples
+	}
+	if len(r.vals) < n {
 		r.vals = append(r.vals, d)
 		return
 	}
 	r.vals[r.pos] = d
-	r.pos = (r.pos + 1) % lagSamples
+	r.pos = (r.pos + 1) % n
 }
 
 type Fetcher struct {
@@ -95,13 +114,14 @@ type Fetcher struct {
 	hubs     HubWatcher
 	kicks    map[string]chan struct{}
 
-	mu     sync.Mutex
-	state  map[string]store.FeedState
-	status map[string]*FeedStatus
-	lags   map[string]*lagRing // by feed kind: publish → first seen
-	polls  int64
-	n304   int64
-	busted int64
+	mu       sync.Mutex
+	state    map[string]store.FeedState
+	status   map[string]*FeedStatus
+	lags     map[string]*lagRing // by feed kind: publish → first seen
+	feedLags map[string]*lagRing // by feed ID
+	polls    int64
+	n304     int64
+	busted   int64
 }
 
 func New(feeds []config.Feed, eng *cluster.Engine, st *store.Store, state map[string]store.FeedState, interval time.Duration, log *slog.Logger) *Fetcher {
@@ -128,6 +148,7 @@ func New(feeds []config.Feed, eng *cluster.Engine, st *store.Store, state map[st
 		state:    state,
 		status:   make(map[string]*FeedStatus, len(feeds)),
 		lags:     map[string]*lagRing{"rss": {}, "sitemap": {}},
+		feedLags: map[string]*lagRing{},
 	}
 	for _, fd := range feeds {
 		f.status[fd.ID] = &FeedStatus{ID: fd.ID, Name: fd.Name, Publisher: fd.Publisher, Category: fd.Category, Kind: fd.Kind, URL: fd.URL}
@@ -221,6 +242,9 @@ func (f *Fetcher) loop(ctx context.Context, fd config.Feed) {
 		if err != nil {
 			fails++
 			delay = min(interval<<min(fails, 5), maxBackoff)
+			if fails >= 10 && isBlocked(err) {
+				delay = blockedBackoff // the site is refusing us; stop knocking so often
+			}
 			f.log.Warn("feed failed", "feed", fd.ID, "fails", fails, "err", err)
 		} else {
 			fails = 0
@@ -261,7 +285,14 @@ func (f *Fetcher) get(ctx context.Context, url string, prev store.FeedState) (*r
 	return r, err
 }
 
-var errForbidden = fmt.Errorf("%w 403", errStatus)
+var (
+	errForbidden    = fmt.Errorf("%w 403", errStatus)
+	errUnauthorized = fmt.Errorf("%w 401", errStatus)
+)
+
+func isBlocked(err error) bool {
+	return errors.Is(err, errForbidden) || errors.Is(err, errUnauthorized)
+}
 
 func (f *Fetcher) getOnce(ctx context.Context, url string, prev store.FeedState, accept bool) (*response, error) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
@@ -290,13 +321,29 @@ func (f *Fetcher) getOnce(ctx context.Context, url string, prev store.FeedState,
 	}
 	if resp.StatusCode != http.StatusOK {
 		io.Copy(io.Discard, io.LimitReader(resp.Body, 64<<10))
-		if resp.StatusCode == http.StatusForbidden {
+		switch resp.StatusCode {
+		case http.StatusForbidden:
 			return r, errForbidden
+		case http.StatusUnauthorized:
+			return r, errUnauthorized
 		}
 		return r, fmt.Errorf("%w %d", errStatus, resp.StatusCode)
 	}
 	r.body, err = io.ReadAll(io.LimitReader(resp.Body, maxBody))
+	if err == nil && len(r.body) > 2 && r.body[0] == 0x1f && r.body[1] == 0x8b {
+		// A .gz file (some sitemaps), not transport compression.
+		r.body, err = gunzip(r.body)
+	}
 	return r, err
+}
+
+func gunzip(b []byte) ([]byte, error) {
+	zr, err := gzip.NewReader(bytes.NewReader(b))
+	if err != nil {
+		return nil, err
+	}
+	defer zr.Close()
+	return io.ReadAll(io.LimitReader(zr, maxBody))
 }
 
 func bustURL(u string) string {
@@ -320,7 +367,9 @@ func (f *Fetcher) fetchOnce(ctx context.Context, fd config.Feed) (time.Duration,
 	start := time.Now()
 	f.mu.Lock()
 	prev := f.state[fd.ID]
-	warm := !f.status[fd.ID].LastOK.IsZero() // first fetch is backfill, not news
+	// The first fetch, or the first after a long outage, is catch-up, not news.
+	lastOK := f.status[fd.ID].LastOK
+	warm := !lastOK.IsZero() && time.Since(lastOK) < 30*time.Minute
 	f.polls++
 	if fd.Bust {
 		f.busted++
@@ -329,12 +378,14 @@ func (f *Fetcher) fetchOnce(ctx context.Context, fd config.Feed) (time.Duration,
 
 	maxAge := time.Duration(-1)
 	items := 0
+	var netDur time.Duration
 	err := func() error {
 		url := fd.URL
 		if fd.Bust {
 			url = bustURL(url)
 		}
 		resp, err := f.get(ctx, url, prev)
+		netDur = time.Since(start)
 		if resp != nil {
 			maxAge = resp.maxAge
 		}
@@ -351,7 +402,7 @@ func (f *Fetcher) fetchOnce(ctx context.Context, fd config.Feed) (time.Duration,
 		now := time.Now().UTC()
 		var stories []*cluster.Story
 		if fd.IsSitemap() {
-			stories, items, err = f.sitemapStories(ctx, fd, resp.body, now)
+			stories, items, err = f.sitemapStories(ctx, fd, resp.body, now, &netDur)
 		} else {
 			stories, items, err = f.feedStories(fd, resp.body, now)
 		}
@@ -390,10 +441,15 @@ func (f *Fetcher) fetchOnce(ctx context.Context, fd config.Feed) (time.Duration,
 				continue
 			}
 			st.NewTotal++
-			// Published == Seen means the feed gave no date; skip those.
-			if warm && !s.Published.Equal(s.Seen) {
+			if warm && hasTime(&s) {
 				if d := s.Seen.Sub(s.Published); d >= 0 && d <= 6*time.Hour {
 					f.lags[fd.Kind].add(d)
+					r := f.feedLags[fd.ID]
+					if r == nil {
+						r = &lagRing{cap: 100}
+						f.feedLags[fd.ID] = r
+					}
+					r.add(d)
 				}
 			}
 		}
@@ -411,7 +467,8 @@ func (f *Fetcher) fetchOnce(ctx context.Context, fd config.Feed) (time.Duration,
 	f.mu.Lock()
 	st := f.status[fd.ID]
 	st.LastFetch = time.Now()
-	st.LatencyMs = time.Since(start).Milliseconds()
+	st.LatencyMs = netDur.Milliseconds()
+	st.ProcessMs = (time.Since(start) - netDur).Milliseconds()
 	if items > 0 {
 		st.Items = items
 	}
@@ -457,14 +514,17 @@ func (f *Fetcher) feedStories(fd config.Feed, body []byte, now time.Time) ([]*cl
 	return stories, len(parsed.Items), nil
 }
 
-func (f *Fetcher) sitemapStories(ctx context.Context, fd config.Feed, body []byte, now time.Time) ([]*cluster.Story, int, error) {
+// netDur gets the time spent fetching a child sitemap added to it.
+func (f *Fetcher) sitemapStories(ctx context.Context, fd config.Feed, body []byte, now time.Time, netDur *time.Duration) ([]*cluster.Story, int, error) {
 	entries, children, err := parseSitemap(body)
 	if err != nil {
 		return nil, 0, fmt.Errorf("sitemap: %w", err)
 	}
 	if len(children) > 0 {
 		// An index: the newest child sitemap holds the latest articles.
+		t0 := time.Now()
 		child, err := f.get(ctx, children[0], store.FeedState{})
+		*netDur += time.Since(t0)
 		if err != nil {
 			return nil, 0, fmt.Errorf("sitemap child: %w", err)
 		}
@@ -547,12 +607,9 @@ func (f *Fetcher) Metrics() Metrics {
 	defer f.mu.Unlock()
 	m := Metrics{Polls: f.polls, NotMod: f.n304, CacheBust: f.busted, Lag: map[string]LagStats{}, ModelTrain: f.model.Size()}
 	for kind, r := range f.lags {
-		if len(r.vals) == 0 {
-			continue
+		if st, ok := r.stats(); ok {
+			m.Lag[kind] = st
 		}
-		l := append([]time.Duration(nil), r.vals...)
-		sort.Slice(l, func(i, j int) bool { return l[i] < l[j] })
-		m.Lag[kind] = LagStats{Samples: len(l), P50: l[len(l)/2].Seconds(), P90: l[len(l)*9/10].Seconds()}
 	}
 	var fetch []int64
 	var sum, n float64
@@ -581,8 +638,14 @@ func (f *Fetcher) Metrics() Metrics {
 func (f *Fetcher) Statuses() []FeedStatus {
 	f.mu.Lock()
 	out := make([]FeedStatus, 0, len(f.status))
-	for _, s := range f.status {
-		out = append(out, *s)
+	for id, s := range f.status {
+		c := *s
+		if r := f.feedLags[id]; r != nil {
+			if st, ok := r.stats(); ok {
+				c.Lag = &st
+			}
+		}
+		out = append(out, c)
 	}
 	f.mu.Unlock()
 	sort.Slice(out, func(i, j int) bool {
@@ -604,4 +667,14 @@ func (f *Fetcher) Health() (ok, total int) {
 		}
 	}
 	return ok, len(f.status)
+}
+
+// hasTime reports whether a story carries a real publish time. Feeds with no
+// date get Published == Seen, and date-only feeds (Nature) say midnight UTC.
+func hasTime(s *cluster.Story) bool {
+	if s.Published.Equal(s.Seen) {
+		return false
+	}
+	u := s.Published.UTC()
+	return u.Hour() != 0 || u.Minute() != 0 || u.Second() != 0
 }

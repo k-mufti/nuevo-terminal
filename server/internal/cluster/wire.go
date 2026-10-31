@@ -25,7 +25,7 @@ type WireCluster struct {
 	N       int        `json:"n"` // distinct publishers
 	Brk     bool       `json:"brk"`
 	BrkAt   int64      `json:"brkAt,omitempty"`
-	Items   []WireItem `json:"items,omitempty"` // only when more than one story
+	More    []WireItem `json:"more,omitempty"` // the stories after the lead, if any
 }
 
 func (c *Cluster) wire() WireCluster {
@@ -56,9 +56,9 @@ func (c *Cluster) wire() WireCluster {
 		return w // the lead fields already describe it
 	}
 	n := min(len(c.members), maxWireItems)
-	w.Items = make([]WireItem, n)
-	for i, s := range c.members[:n] {
-		w.Items[i] = WireItem{Src: s.Source, Pub: s.Publisher, Title: s.Title, Link: s.Link, Time: s.Published.UnixMilli()}
+	w.More = make([]WireItem, n-1)
+	for i, s := range c.members[1:n] {
+		w.More[i] = WireItem{Src: s.Source, Pub: s.Publisher, Title: s.Title, Link: s.Link, Time: s.Published.UnixMilli()}
 	}
 	return w
 }

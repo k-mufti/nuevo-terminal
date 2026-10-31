@@ -585,5 +585,69 @@
     "category": "markets",
     "url": "https://www.marketwatch.com/mw_news_sitemap.xml",
     "kind": "sitemap"
+  },
+  {
+    "id": "nyt-sitemap",
+    "name": "NYT (sitemap)",
+    "publisher": "NYT",
+    "category": "us",
+    "url": "https://www.nytimes.com/sitemaps/new/news.xml.gz",
+    "kind": "sitemap"
+  },
+  {
+    "id": "cnbc-sitemap",
+    "name": "CNBC (sitemap)",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/sitemap_news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "cbs-sitemap",
+    "name": "CBS (sitemap)",
+    "publisher": "CBS",
+    "category": "us",
+    "url": "https://www.cbsnews.com/xml-sitemap/news.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "fox-sitemap",
+    "name": "Fox News (sitemap)",
+    "publisher": "Fox News",
+    "category": "us",
+    "url": "https://www.foxnews.com/sitemap.xml?type=news",
+    "kind": "sitemap"
+  },
+  {
+    "id": "al-jazeera-sitemap",
+    "name": "Al Jazeera (sitemap)",
+    "publisher": "Al Jazeera",
+    "category": "world",
+    "url": "https://www.aljazeera.com/news-sitemap.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "the-national-sitemap",
+    "name": "The National (sitemap)",
+    "publisher": "The National",
+    "category": "mideast",
+    "url": "https://www.thenationalnews.com/arc/outboundfeeds/news-sitemap/?outputType=xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "techcrunch-sitemap",
+    "name": "TechCrunch (sitemap)",
+    "publisher": "TechCrunch",
+    "category": "tech",
+    "url": "https://techcrunch.com/news-sitemap.xml",
+    "kind": "sitemap"
+  },
+  {
+    "id": "verge-sitemap",
+    "name": "The Verge (sitemap)",
+    "publisher": "The Verge",
+    "category": "tech",
+    "url": "https://www.theverge.com/sitemaps/google_news",
+    "kind": "sitemap"
   }
 ]

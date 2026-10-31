@@ -2,7 +2,7 @@ import { For } from "solid-js";
 import { PANELS } from "../panels";
 
 const KEYS: [string, string][] = [
-  ["1 – 7", "Switch panel"],
+  [`1 – ${PANELS.length}`, "Switch panel"],
   ["h / l  ← →", "Previous / next panel"],
   ["j / k  ↓ ↑", "Next / previous story"],
   ["PgDn / PgUp", "Jump 20 stories"],
@@ -45,8 +45,8 @@ export default function Help(props: { onClose: () => void }) {
               </>
             )}
           </For>
-          <dt>ALL</dt>
-          <dd>Back to all panels</dd>
+          <dt>HOME</dt>
+          <dd>Back to the panel grid</dd>
           <dt>BRK</dt>
           <dd>Latest breaking story</dd>
           <dt>anything else</dt>
