@@ -85,6 +85,14 @@
     "classify": true
   },
   {
+    "id": "fox-world",
+    "name": "Fox News World",
+    "publisher": "Fox News",
+    "category": "world",
+    "url": "https://moxie.foxnews.com/google-publisher/world.xml",
+    "bust": true
+  },
+  {
     "id": "npr-news",
     "name": "NPR News",
     "publisher": "NPR",
@@ -152,6 +160,14 @@
     "publisher": "Axios",
     "category": "us",
     "url": "https://api.axios.com/feed/",
+    "bust": true
+  },
+  {
+    "id": "fox-politics",
+    "name": "Fox News Politics",
+    "publisher": "Fox News",
+    "category": "us",
+    "url": "https://moxie.foxnews.com/google-publisher/politics.xml",
     "bust": true
   },
   {
@@ -239,6 +255,21 @@
     "publisher": "Seeking Alpha",
     "category": "markets",
     "url": "https://seekingalpha.com/market_currents.xml"
+  },
+  {
+    "id": "fox-business",
+    "name": "Fox Business",
+    "publisher": "Fox Business",
+    "category": "markets",
+    "url": "https://moxie.foxbusiness.com/google-publisher/latest.xml",
+    "bust": true
+  },
+  {
+    "id": "the-block",
+    "name": "The Block",
+    "publisher": "The Block",
+    "category": "markets",
+    "url": "https://www.theblock.co/rss.xml"
   },
   {
     "id": "hacker-news",
@@ -329,6 +360,14 @@
     "publisher": "Guardian",
     "category": "tech",
     "url": "https://www.theguardian.com/uk/technology/rss"
+  },
+  {
+    "id": "fox-tech",
+    "name": "Fox News Tech",
+    "publisher": "Fox News",
+    "category": "tech",
+    "url": "https://moxie.foxnews.com/google-publisher/tech.xml",
+    "bust": true
   },
   {
     "id": "bbc-middle-east",
@@ -489,6 +528,13 @@
     "publisher": "NYT",
     "category": "sports",
     "url": "https://www.nytimes.com/athletic/rss/news/"
+  },
+  {
+    "id": "fox-sports",
+    "name": "Fox Sports",
+    "publisher": "Fox Sports",
+    "category": "sports",
+    "url": "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=30"
   },
   {
     "id": "reuters",
