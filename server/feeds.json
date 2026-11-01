@@ -93,6 +93,452 @@
     "bust": true
   },
   {
+    "id": "bbc-asia",
+    "name": "BBC Asia",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/world/asia/rss.xml"
+  },
+  {
+    "id": "bbc-europe",
+    "name": "BBC Europe",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/world/europe/rss.xml"
+  },
+  {
+    "id": "bbc-africa",
+    "name": "BBC Africa",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/world/africa/rss.xml"
+  },
+  {
+    "id": "bbc-latin-america",
+    "name": "BBC Latin America",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/world/latin_america/rss.xml"
+  },
+  {
+    "id": "bbc-top-stories",
+    "name": "BBC Top Stories",
+    "publisher": "BBC",
+    "category": "world",
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "classify": true
+  },
+  {
+    "id": "nyt-europe",
+    "name": "NYT Europe",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml"
+  },
+  {
+    "id": "nyt-asia",
+    "name": "NYT Asia",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/AsiaPacific.xml"
+  },
+  {
+    "id": "nyt-africa",
+    "name": "NYT Africa",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Africa.xml"
+  },
+  {
+    "id": "nyt-americas",
+    "name": "NYT Americas",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Americas.xml"
+  },
+  {
+    "id": "nyt-home",
+    "name": "NYT Home",
+    "publisher": "NYT",
+    "category": "world",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "classify": true
+  },
+  {
+    "id": "guardian-europe",
+    "name": "Guardian Europe",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/world/europe-news/rss"
+  },
+  {
+    "id": "guardian-asia",
+    "name": "Guardian Asia",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/world/asia-pacific/rss"
+  },
+  {
+    "id": "guardian-africa",
+    "name": "Guardian Africa",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/world/africa/rss"
+  },
+  {
+    "id": "guardian-americas",
+    "name": "Guardian Americas",
+    "publisher": "Guardian",
+    "category": "world",
+    "url": "https://www.theguardian.com/world/americas/rss"
+  },
+  {
+    "id": "la-times-world",
+    "name": "LA Times World",
+    "publisher": "LA Times",
+    "category": "world",
+    "url": "https://www.latimes.com/world-nation/rss2.0.xml"
+  },
+  {
+    "id": "times-of-india-world",
+    "name": "Times of India World",
+    "publisher": "Times of India",
+    "category": "world",
+    "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+  },
+  {
+    "id": "the-hindu-international",
+    "name": "The Hindu International",
+    "publisher": "The Hindu",
+    "category": "world",
+    "url": "https://www.thehindu.com/news/international/feeder/default.rss"
+  },
+  {
+    "id": "scmp-world",
+    "name": "SCMP World",
+    "publisher": "SCMP",
+    "category": "world",
+    "url": "https://www.scmp.com/rss/91/feed"
+  },
+  {
+    "id": "scmp-china",
+    "name": "SCMP China",
+    "publisher": "SCMP",
+    "category": "world",
+    "url": "https://www.scmp.com/rss/4/feed"
+  },
+  {
+    "id": "japan-times",
+    "name": "Japan Times",
+    "publisher": "Japan Times",
+    "category": "world",
+    "url": "https://www.japantimes.co.jp/feed/"
+  },
+  {
+    "id": "cbc-world",
+    "name": "CBC World",
+    "publisher": "CBC",
+    "category": "world",
+    "url": "https://www.cbc.ca/webfeed/rss/rss-world"
+  },
+  {
+    "id": "cbc-canada",
+    "name": "CBC Canada",
+    "publisher": "CBC",
+    "category": "world",
+    "url": "https://www.cbc.ca/webfeed/rss/rss-canada"
+  },
+  {
+    "id": "abc-australia",
+    "name": "ABC Australia",
+    "publisher": "ABC Australia",
+    "category": "world",
+    "url": "https://www.abc.net.au/news/feed/51120/rss.xml"
+  },
+  {
+    "id": "rfi-english",
+    "name": "RFI English",
+    "publisher": "RFI",
+    "category": "world",
+    "url": "https://www.rfi.fr/en/rss"
+  },
+  {
+    "id": "un-news",
+    "name": "UN News",
+    "publisher": "UN News",
+    "category": "world",
+    "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+  },
+  {
+    "id": "moscow-times",
+    "name": "Moscow Times",
+    "publisher": "Moscow Times",
+    "category": "world",
+    "url": "https://www.themoscowtimes.com/rss/news"
+  },
+  {
+    "id": "straits-times-world",
+    "name": "Straits Times World",
+    "publisher": "Straits Times",
+    "category": "world",
+    "url": "https://www.straitstimes.com/news/world/rss.xml"
+  },
+  {
+    "id": "cna",
+    "name": "CNA",
+    "publisher": "CNA",
+    "category": "world",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
+  },
+  {
+    "id": "the-diplomat",
+    "name": "The Diplomat",
+    "publisher": "The Diplomat",
+    "category": "world",
+    "url": "https://thediplomat.com/feed/"
+  },
+  {
+    "id": "foreign-policy",
+    "name": "Foreign Policy",
+    "publisher": "Foreign Policy",
+    "category": "world",
+    "url": "https://foreignpolicy.com/feed/"
+  },
+  {
+    "id": "global-news-world",
+    "name": "Global News World",
+    "publisher": "Global News",
+    "category": "world",
+    "url": "https://globalnews.ca/world/feed/"
+  },
+  {
+    "id": "rte-news",
+    "name": "RTE News",
+    "publisher": "RTE",
+    "category": "world",
+    "url": "https://www.rte.ie/feeds/rss/?index=/news/"
+  },
+  {
+    "id": "africanews",
+    "name": "Africanews",
+    "publisher": "Africanews",
+    "category": "world",
+    "url": "https://www.africanews.com/feed/rss"
+  },
+  {
+    "id": "allafrica",
+    "name": "AllAfrica",
+    "publisher": "AllAfrica",
+    "category": "world",
+    "url": "https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf"
+  },
+  {
+    "id": "mercopress",
+    "name": "MercoPress",
+    "publisher": "MercoPress",
+    "category": "world",
+    "url": "https://en.mercopress.com/rss"
+  },
+  {
+    "id": "yonhap",
+    "name": "Yonhap",
+    "publisher": "Yonhap",
+    "category": "world",
+    "url": "https://en.yna.co.kr/RSS/news.xml"
+  },
+  {
+    "id": "hong-kong-free-press",
+    "name": "Hong Kong Free Press",
+    "publisher": "Hong Kong Free Press",
+    "category": "world",
+    "url": "https://hongkongfp.com/feed/"
+  },
+  {
+    "id": "dawn",
+    "name": "Dawn",
+    "publisher": "Dawn",
+    "category": "world",
+    "url": "https://www.dawn.com/feeds/home"
+  },
+  {
+    "id": "ndtv-world",
+    "name": "NDTV World",
+    "publisher": "NDTV",
+    "category": "world",
+    "url": "https://feeds.feedburner.com/ndtvnews-world-news"
+  },
+  {
+    "id": "smh-world",
+    "name": "SMH World",
+    "publisher": "Sydney Morning Herald",
+    "category": "world",
+    "url": "https://www.smh.com.au/rss/world.xml"
+  },
+  {
+    "id": "nz-herald-world",
+    "name": "NZ Herald World",
+    "publisher": "NZ Herald",
+    "category": "world",
+    "url": "https://www.nzherald.co.nz/arc/outboundfeeds/rss/section/world/?outputType=xml"
+  },
+  {
+    "id": "politico-europe",
+    "name": "Politico Europe",
+    "publisher": "Politico Europe",
+    "category": "world",
+    "url": "https://www.politico.eu/feed/"
+  },
+  {
+    "id": "spiegel-international",
+    "name": "Spiegel International",
+    "publisher": "Spiegel",
+    "category": "world",
+    "url": "https://www.spiegel.de/international/index.rss"
+  },
+  {
+    "id": "le-monde-english",
+    "name": "Le Monde English",
+    "publisher": "Le Monde",
+    "category": "world",
+    "url": "https://www.lemonde.fr/en/rss/une.xml"
+  },
+  {
+    "id": "el-pais-english",
+    "name": "El Pais English",
+    "publisher": "El Pais",
+    "category": "world",
+    "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/english.elpais.com/portada"
+  },
+  {
+    "id": "meduza",
+    "name": "Meduza",
+    "publisher": "Meduza",
+    "category": "world",
+    "url": "https://meduza.io/rss/en/all"
+  },
+  {
+    "id": "ukrainska-pravda",
+    "name": "Ukrainska Pravda",
+    "publisher": "Ukrainska Pravda",
+    "category": "world",
+    "url": "https://www.pravda.com.ua/eng/rss/"
+  },
+  {
+    "id": "balkan-insight",
+    "name": "Balkan Insight",
+    "publisher": "Balkan Insight",
+    "category": "world",
+    "url": "https://balkaninsight.com/feed/"
+  },
+  {
+    "id": "notes-from-poland",
+    "name": "Notes from Poland",
+    "publisher": "Notes from Poland",
+    "category": "world",
+    "url": "https://notesfrompoland.com/feed/"
+  },
+  {
+    "id": "euractiv",
+    "name": "Euractiv",
+    "publisher": "Euractiv",
+    "category": "world",
+    "url": "https://www.euractiv.com/feed/"
+  },
+  {
+    "id": "asia-times",
+    "name": "Asia Times",
+    "publisher": "Asia Times",
+    "category": "world",
+    "url": "https://asiatimes.com/feed/"
+  },
+  {
+    "id": "nikkei-asia",
+    "name": "Nikkei Asia",
+    "publisher": "Nikkei Asia",
+    "category": "world",
+    "url": "https://asia.nikkei.com/rss/feed/nar"
+  },
+  {
+    "id": "taipei-times",
+    "name": "Taipei Times",
+    "publisher": "Taipei Times",
+    "category": "world",
+    "url": "https://www.taipeitimes.com/xml/index.rss"
+  },
+  {
+    "id": "cs-monitor-world",
+    "name": "CS Monitor World",
+    "publisher": "CS Monitor",
+    "category": "world",
+    "url": "https://rss.csmonitor.com/feeds/world"
+  },
+  {
+    "id": "newsweek",
+    "name": "Newsweek",
+    "publisher": "Newsweek",
+    "category": "world",
+    "url": "https://www.newsweek.com/rss",
+    "classify": true
+  },
+  {
+    "id": "economist-latest",
+    "name": "Economist Latest",
+    "publisher": "Economist",
+    "category": "world",
+    "url": "https://www.economist.com/latest/rss.xml",
+    "classify": true
+  },
+  {
+    "id": "economist-international",
+    "name": "Economist International",
+    "publisher": "Economist",
+    "category": "world",
+    "url": "https://www.economist.com/international/rss.xml"
+  },
+  {
+    "id": "defense-news",
+    "name": "Defense News",
+    "publisher": "Defense News",
+    "category": "world",
+    "url": "https://www.defensenews.com/arc/outboundfeeds/rss/?outputType=xml"
+  },
+  {
+    "id": "breaking-defense",
+    "name": "Breaking Defense",
+    "publisher": "Breaking Defense",
+    "category": "world",
+    "url": "https://breakingdefense.com/feed/"
+  },
+  {
+    "id": "the-war-zone",
+    "name": "The War Zone",
+    "publisher": "The War Zone",
+    "category": "world",
+    "url": "https://www.twz.com/feed"
+  },
+  {
+    "id": "semafor",
+    "name": "Semafor",
+    "publisher": "Semafor",
+    "category": "world",
+    "url": "https://www.semafor.com/rss.xml",
+    "classify": true
+  },
+  {
+    "id": "bloomberg-politics",
+    "name": "Bloomberg Politics",
+    "publisher": "Bloomberg",
+    "category": "world",
+    "url": "https://feeds.bloomberg.com/politics/news.rss"
+  },
+  {
+    "id": "wsj-world",
+    "name": "WSJ World",
+    "publisher": "WSJ",
+    "category": "world",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews"
+  },
+  {
     "id": "npr-news",
     "name": "NPR News",
     "publisher": "NPR",
@@ -199,6 +645,283 @@
     "category": "us",
     "url": "https://www.rollingstone.com/feed/",
     "classify": true
+  },
+  {
+    "id": "bbc-us-and-canada",
+    "name": "BBC US & Canada",
+    "publisher": "BBC",
+    "category": "us",
+    "url": "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"
+  },
+  {
+    "id": "nyt-politics",
+    "name": "NYT Politics",
+    "publisher": "NYT",
+    "category": "us",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+  },
+  {
+    "id": "guardian-us",
+    "name": "Guardian US",
+    "publisher": "Guardian",
+    "category": "us",
+    "url": "https://www.theguardian.com/us-news/rss"
+  },
+  {
+    "id": "la-times-california",
+    "name": "LA Times California",
+    "publisher": "LA Times",
+    "category": "us",
+    "url": "https://www.latimes.com/california/rss2.0.xml"
+  },
+  {
+    "id": "the-atlantic",
+    "name": "The Atlantic",
+    "publisher": "The Atlantic",
+    "category": "us",
+    "url": "https://www.theatlantic.com/feed/all/",
+    "classify": true
+  },
+  {
+    "id": "new-yorker-news",
+    "name": "New Yorker News",
+    "publisher": "New Yorker",
+    "category": "us",
+    "url": "https://www.newyorker.com/feed/news",
+    "classify": true
+  },
+  {
+    "id": "nbc-news-rss",
+    "name": "NBC News",
+    "publisher": "NBC",
+    "category": "us",
+    "url": "https://feeds.nbcnews.com/nbcnews/public/news",
+    "classify": true
+  },
+  {
+    "id": "nbc-politics",
+    "name": "NBC Politics",
+    "publisher": "NBC",
+    "category": "us",
+    "url": "https://feeds.nbcnews.com/nbcnews/public/politics"
+  },
+  {
+    "id": "ny-post",
+    "name": "NY Post",
+    "publisher": "NY Post",
+    "category": "us",
+    "url": "https://nypost.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "daily-beast",
+    "name": "Daily Beast",
+    "publisher": "Daily Beast",
+    "category": "us",
+    "url": "https://www.thedailybeast.com/arc/outboundfeeds/rss/articles/"
+  },
+  {
+    "id": "slate",
+    "name": "Slate",
+    "publisher": "Slate",
+    "category": "us",
+    "url": "https://slate.com/feeds/all.rss",
+    "classify": true
+  },
+  {
+    "id": "salon",
+    "name": "Salon",
+    "publisher": "Salon",
+    "category": "us",
+    "url": "https://www.salon.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "national-review",
+    "name": "National Review",
+    "publisher": "National Review",
+    "category": "us",
+    "url": "https://www.nationalreview.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "washington-examiner",
+    "name": "Washington Examiner",
+    "publisher": "Washington Examiner",
+    "category": "us",
+    "url": "https://www.washingtonexaminer.com/feed",
+    "classify": true
+  },
+  {
+    "id": "breitbart",
+    "name": "Breitbart",
+    "publisher": "Breitbart",
+    "category": "us",
+    "url": "https://feeds.feedburner.com/breitbart",
+    "classify": true
+  },
+  {
+    "id": "mother-jones",
+    "name": "Mother Jones",
+    "publisher": "Mother Jones",
+    "category": "us",
+    "url": "https://www.motherjones.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "propublica",
+    "name": "ProPublica",
+    "publisher": "ProPublica",
+    "category": "us",
+    "url": "https://www.propublica.org/feeds/propublica/main"
+  },
+  {
+    "id": "roll-call",
+    "name": "Roll Call",
+    "publisher": "Roll Call",
+    "category": "us",
+    "url": "https://rollcall.com/feed/"
+  },
+  {
+    "id": "washington-free-beacon",
+    "name": "Washington Free Beacon",
+    "publisher": "Free Beacon",
+    "category": "us",
+    "url": "https://freebeacon.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "the-nation",
+    "name": "The Nation",
+    "publisher": "The Nation",
+    "category": "us",
+    "url": "https://www.thenation.com/feed/?post_type=article",
+    "classify": true
+  },
+  {
+    "id": "the-federalist",
+    "name": "The Federalist",
+    "publisher": "The Federalist",
+    "category": "us",
+    "url": "https://thefederalist.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "talking-points-memo",
+    "name": "Talking Points Memo",
+    "publisher": "TPM",
+    "category": "us",
+    "url": "https://talkingpointsmemo.com/feed",
+    "classify": true
+  },
+  {
+    "id": "cbs-politics",
+    "name": "CBS Politics",
+    "publisher": "CBS",
+    "category": "us",
+    "url": "https://www.cbsnews.com/latest/rss/politics"
+  },
+  {
+    "id": "abc-politics",
+    "name": "ABC Politics",
+    "publisher": "ABC",
+    "category": "us",
+    "url": "https://abcnews.go.com/abcnews/politicsheadlines"
+  },
+  {
+    "id": "npr-politics",
+    "name": "NPR Politics",
+    "publisher": "NPR",
+    "category": "us",
+    "url": "https://feeds.npr.org/1014/rss.xml"
+  },
+  {
+    "id": "washington-times",
+    "name": "Washington Times",
+    "publisher": "Washington Times",
+    "category": "us",
+    "url": "https://www.washingtontimes.com/rss/headlines/news/"
+  },
+  {
+    "id": "scotusblog",
+    "name": "SCOTUSblog",
+    "publisher": "SCOTUSblog",
+    "category": "us",
+    "url": "https://www.scotusblog.com/feed/"
+  },
+  {
+    "id": "courthouse-news",
+    "name": "Courthouse News",
+    "publisher": "Courthouse News",
+    "category": "us",
+    "url": "https://www.courthousenews.com/feed/"
+  },
+  {
+    "id": "military-times",
+    "name": "Military Times",
+    "publisher": "Military Times",
+    "category": "us",
+    "url": "https://www.militarytimes.com/arc/outboundfeeds/rss/?outputType=xml"
+  },
+  {
+    "id": "cs-monitor-usa",
+    "name": "CS Monitor USA",
+    "publisher": "CS Monitor",
+    "category": "us",
+    "url": "https://rss.csmonitor.com/feeds/usa"
+  },
+  {
+    "id": "daily-caller",
+    "name": "Daily Caller",
+    "publisher": "Daily Caller",
+    "category": "us",
+    "url": "https://dailycaller.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "the-bulwark",
+    "name": "The Bulwark",
+    "publisher": "The Bulwark",
+    "category": "us",
+    "url": "https://www.thebulwark.com/feed",
+    "classify": true
+  },
+  {
+    "id": "raw-story",
+    "name": "Raw Story",
+    "publisher": "Raw Story",
+    "category": "us",
+    "url": "https://www.rawstory.com/feeds/feed.rss",
+    "classify": true
+  },
+  {
+    "id": "common-dreams",
+    "name": "Common Dreams",
+    "publisher": "Common Dreams",
+    "category": "us",
+    "url": "https://www.commondreams.org/feeds/feed.rss",
+    "classify": true
+  },
+  {
+    "id": "texas-tribune",
+    "name": "Texas Tribune",
+    "publisher": "Texas Tribune",
+    "category": "us",
+    "url": "https://feeds.texastribune.org/feeds/main/"
+  },
+  {
+    "id": "calmatters",
+    "name": "CalMatters",
+    "publisher": "CalMatters",
+    "category": "us",
+    "url": "https://calmatters.org/feed/"
+  },
+  {
+    "id": "wsj-us",
+    "name": "WSJ US",
+    "publisher": "WSJ",
+    "category": "us",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSUSnews"
   },
   {
     "id": "cnbc-top",
@@ -321,6 +1044,297 @@
     "publisher": "CryptoSlate",
     "category": "markets",
     "url": "https://cryptoslate.com/feed/"
+  },
+  {
+    "id": "cnbc-world",
+    "name": "CNBC World",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html"
+  },
+  {
+    "id": "cnbc-finance",
+    "name": "CNBC Finance",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html"
+  },
+  {
+    "id": "cnbc-earnings",
+    "name": "CNBC Earnings",
+    "publisher": "CNBC",
+    "category": "markets",
+    "url": "https://www.cnbc.com/id/15839135/device/rss/rss.html"
+  },
+  {
+    "id": "marketwatch-bulletins",
+    "name": "MarketWatch Bulletins",
+    "publisher": "MarketWatch",
+    "category": "markets",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_bulletins"
+  },
+  {
+    "id": "wsj-business",
+    "name": "WSJ Business",
+    "publisher": "WSJ",
+    "category": "markets",
+    "url": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness"
+  },
+  {
+    "id": "bloomberg-markets",
+    "name": "Bloomberg Markets",
+    "publisher": "Bloomberg",
+    "category": "markets",
+    "url": "https://feeds.bloomberg.com/markets/news.rss"
+  },
+  {
+    "id": "bloomberg-economics",
+    "name": "Bloomberg Economics",
+    "publisher": "Bloomberg",
+    "category": "markets",
+    "url": "https://feeds.bloomberg.com/economics/news.rss"
+  },
+  {
+    "id": "economist-finance",
+    "name": "Economist Finance",
+    "publisher": "Economist",
+    "category": "markets",
+    "url": "https://www.economist.com/finance-and-economics/rss.xml"
+  },
+  {
+    "id": "business-insider-rss",
+    "name": "Business Insider",
+    "publisher": "Business Insider",
+    "category": "markets",
+    "url": "https://feeds.businessinsider.com/custom/all",
+    "classify": true
+  },
+  {
+    "id": "fortune",
+    "name": "Fortune",
+    "publisher": "Fortune",
+    "category": "markets",
+    "url": "https://fortune.com/feed/",
+    "classify": true
+  },
+  {
+    "id": "forbes-business",
+    "name": "Forbes Business",
+    "publisher": "Forbes",
+    "category": "markets",
+    "url": "https://www.forbes.com/business/feed/",
+    "classify": true
+  },
+  {
+    "id": "zero-hedge",
+    "name": "Zero Hedge",
+    "publisher": "Zero Hedge",
+    "category": "markets",
+    "url": "https://feeds.feedburner.com/zerohedge/feed",
+    "classify": true
+  },
+  {
+    "id": "benzinga",
+    "name": "Benzinga",
+    "publisher": "Benzinga",
+    "category": "markets",
+    "url": "https://www.benzinga.com/feed"
+  },
+  {
+    "id": "nasdaq-markets",
+    "name": "Nasdaq Markets",
+    "publisher": "Nasdaq",
+    "category": "markets",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Markets"
+  },
+  {
+    "id": "investing-com-stocks",
+    "name": "Investing.com Stocks",
+    "publisher": "Investing.com",
+    "category": "markets",
+    "url": "https://www.investing.com/rss/news_25.rss"
+  },
+  {
+    "id": "investing-com-economy",
+    "name": "Investing.com Economy",
+    "publisher": "Investing.com",
+    "category": "markets",
+    "url": "https://www.investing.com/rss/news_14.rss"
+  },
+  {
+    "id": "investing-com-forex",
+    "name": "Investing.com Forex",
+    "publisher": "Investing.com",
+    "category": "markets",
+    "url": "https://www.investing.com/rss/news_1.rss"
+  },
+  {
+    "id": "investing-com-commodities",
+    "name": "Investing.com Commodities",
+    "publisher": "Investing.com",
+    "category": "markets",
+    "url": "https://www.investing.com/rss/news_11.rss"
+  },
+  {
+    "id": "fxstreet",
+    "name": "FXStreet",
+    "publisher": "FXStreet",
+    "category": "markets",
+    "url": "https://www.fxstreet.com/rss/news"
+  },
+  {
+    "id": "forexlive",
+    "name": "ForexLive",
+    "publisher": "ForexLive",
+    "category": "markets",
+    "url": "https://www.forexlive.com/feed/news"
+  },
+  {
+    "id": "oilprice",
+    "name": "OilPrice",
+    "publisher": "OilPrice",
+    "category": "markets",
+    "url": "https://oilprice.com/rss/main"
+  },
+  {
+    "id": "federal-reserve",
+    "name": "Federal Reserve",
+    "publisher": "Federal Reserve",
+    "category": "markets",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml"
+  },
+  {
+    "id": "sec-press-releases",
+    "name": "SEC Press Releases",
+    "publisher": "SEC",
+    "category": "markets",
+    "url": "https://www.sec.gov/news/pressreleases.rss"
+  },
+  {
+    "id": "ecb-press",
+    "name": "ECB Press",
+    "publisher": "ECB",
+    "category": "markets",
+    "url": "https://www.ecb.europa.eu/rss/press.html"
+  },
+  {
+    "id": "crunchbase-news",
+    "name": "Crunchbase News",
+    "publisher": "Crunchbase News",
+    "category": "markets",
+    "url": "https://news.crunchbase.com/feed/"
+  },
+  {
+    "id": "wolf-street",
+    "name": "Wolf Street",
+    "publisher": "Wolf Street",
+    "category": "markets",
+    "url": "https://wolfstreet.com/feed/"
+  },
+  {
+    "id": "naked-capitalism",
+    "name": "Naked Capitalism",
+    "publisher": "Naked Capitalism",
+    "category": "markets",
+    "url": "https://www.nakedcapitalism.com/feed"
+  },
+  {
+    "id": "blockworks",
+    "name": "Blockworks",
+    "publisher": "Blockworks",
+    "category": "markets",
+    "url": "https://blockworks.co/feed"
+  },
+  {
+    "id": "bitcoin-com-news",
+    "name": "Bitcoin.com News",
+    "publisher": "Bitcoin.com",
+    "category": "markets",
+    "url": "https://news.bitcoin.com/feed/"
+  },
+  {
+    "id": "cryptopotato",
+    "name": "CryptoPotato",
+    "publisher": "CryptoPotato",
+    "category": "markets",
+    "url": "https://cryptopotato.com/feed/"
+  },
+  {
+    "id": "u-today",
+    "name": "U.Today",
+    "publisher": "U.Today",
+    "category": "markets",
+    "url": "https://u.today/rss"
+  },
+  {
+    "id": "newsbtc",
+    "name": "NewsBTC",
+    "publisher": "NewsBTC",
+    "category": "markets",
+    "url": "https://www.newsbtc.com/feed/"
+  },
+  {
+    "id": "beincrypto",
+    "name": "BeInCrypto",
+    "publisher": "BeInCrypto",
+    "category": "markets",
+    "url": "https://beincrypto.com/feed/"
+  },
+  {
+    "id": "bitcoinist",
+    "name": "Bitcoinist",
+    "publisher": "Bitcoinist",
+    "category": "markets",
+    "url": "https://bitcoinist.com/feed/"
+  },
+  {
+    "id": "supply-chain-dive",
+    "name": "Supply Chain Dive",
+    "publisher": "Supply Chain Dive",
+    "category": "markets",
+    "url": "https://www.supplychaindive.com/feeds/news/"
+  },
+  {
+    "id": "retail-dive",
+    "name": "Retail Dive",
+    "publisher": "Retail Dive",
+    "category": "markets",
+    "url": "https://www.retaildive.com/feeds/news/"
+  },
+  {
+    "id": "banking-dive",
+    "name": "Banking Dive",
+    "publisher": "Banking Dive",
+    "category": "markets",
+    "url": "https://www.bankingdive.com/feeds/news/"
+  },
+  {
+    "id": "utility-dive",
+    "name": "Utility Dive",
+    "publisher": "Utility Dive",
+    "category": "markets",
+    "url": "https://www.utilitydive.com/feeds/news/"
+  },
+  {
+    "id": "rigzone",
+    "name": "Rigzone",
+    "publisher": "Rigzone",
+    "category": "markets",
+    "url": "https://www.rigzone.com/news/rss/rigzone_latest.aspx"
+  },
+  {
+    "id": "kiplinger",
+    "name": "Kiplinger",
+    "publisher": "Kiplinger",
+    "category": "markets",
+    "url": "https://www.kiplinger.com/feeds/all"
+  },
+  {
+    "id": "thestreet",
+    "name": "TheStreet",
+    "publisher": "TheStreet",
+    "category": "markets",
+    "url": "https://www.thestreet.com/.rss/full/"
   },
   {
     "id": "hacker-news",
@@ -484,6 +1498,321 @@
     "url": "https://feeds.feedburner.com/TheHackersNews"
   },
   {
+    "id": "cnbc-tech",
+    "name": "CNBC Tech",
+    "publisher": "CNBC",
+    "category": "tech",
+    "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html"
+  },
+  {
+    "id": "wsj-tech",
+    "name": "WSJ Tech",
+    "publisher": "WSJ",
+    "category": "tech",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSWSJD"
+  },
+  {
+    "id": "bloomberg-tech",
+    "name": "Bloomberg Tech",
+    "publisher": "Bloomberg",
+    "category": "tech",
+    "url": "https://feeds.bloomberg.com/technology/news.rss"
+  },
+  {
+    "id": "techradar",
+    "name": "TechRadar",
+    "publisher": "TechRadar",
+    "category": "tech",
+    "url": "https://www.techradar.com/rss"
+  },
+  {
+    "id": "tom-s-hardware",
+    "name": "Tom's Hardware",
+    "publisher": "Tom's Hardware",
+    "category": "tech",
+    "url": "https://www.tomshardware.com/feeds/all"
+  },
+  {
+    "id": "the-next-web",
+    "name": "The Next Web",
+    "publisher": "The Next Web",
+    "category": "tech",
+    "url": "https://thenextweb.com/feed"
+  },
+  {
+    "id": "zdnet",
+    "name": "ZDNet",
+    "publisher": "ZDNet",
+    "category": "tech",
+    "url": "https://www.zdnet.com/news/rss.xml"
+  },
+  {
+    "id": "cnet",
+    "name": "CNET",
+    "publisher": "CNET",
+    "category": "tech",
+    "url": "https://www.cnet.com/rss/news/"
+  },
+  {
+    "id": "pcworld",
+    "name": "PCWorld",
+    "publisher": "PCWorld",
+    "category": "tech",
+    "url": "https://www.pcworld.com/feed"
+  },
+  {
+    "id": "macrumors",
+    "name": "MacRumors",
+    "publisher": "MacRumors",
+    "category": "tech",
+    "url": "https://feeds.macrumors.com/MacRumors-All"
+  },
+  {
+    "id": "appleinsider",
+    "name": "AppleInsider",
+    "publisher": "AppleInsider",
+    "category": "tech",
+    "url": "https://appleinsider.com/rss/news/"
+  },
+  {
+    "id": "android-authority",
+    "name": "Android Authority",
+    "publisher": "Android Authority",
+    "category": "tech",
+    "url": "https://www.androidauthority.com/feed/"
+  },
+  {
+    "id": "android-police",
+    "name": "Android Police",
+    "publisher": "Android Police",
+    "category": "tech",
+    "url": "https://www.androidpolice.com/feed/"
+  },
+  {
+    "id": "xda",
+    "name": "XDA",
+    "publisher": "XDA",
+    "category": "tech",
+    "url": "https://www.xda-developers.com/feed/"
+  },
+  {
+    "id": "rest-of-world",
+    "name": "Rest of World",
+    "publisher": "Rest of World",
+    "category": "tech",
+    "url": "https://restofworld.org/feed/latest/"
+  },
+  {
+    "id": "ieee-spectrum",
+    "name": "IEEE Spectrum",
+    "publisher": "IEEE Spectrum",
+    "category": "tech",
+    "url": "https://spectrum.ieee.org/feeds/feed.rss"
+  },
+  {
+    "id": "hackaday",
+    "name": "Hackaday",
+    "publisher": "Hackaday",
+    "category": "tech",
+    "url": "https://hackaday.com/blog/feed/"
+  },
+  {
+    "id": "lobsters",
+    "name": "Lobsters",
+    "publisher": "Lobsters",
+    "category": "tech",
+    "url": "https://lobste.rs/rss"
+  },
+  {
+    "id": "github-blog",
+    "name": "GitHub Blog",
+    "publisher": "GitHub Blog",
+    "category": "tech",
+    "url": "https://github.blog/feed/"
+  },
+  {
+    "id": "openai-news",
+    "name": "OpenAI News",
+    "publisher": "OpenAI",
+    "category": "tech",
+    "url": "https://openai.com/news/rss.xml"
+  },
+  {
+    "id": "google-blog",
+    "name": "Google Blog",
+    "publisher": "Google",
+    "category": "tech",
+    "url": "https://blog.google/rss/"
+  },
+  {
+    "id": "the-decoder",
+    "name": "The Decoder",
+    "publisher": "The Decoder",
+    "category": "tech",
+    "url": "https://the-decoder.com/feed/"
+  },
+  {
+    "id": "simon-willison",
+    "name": "Simon Willison",
+    "publisher": "Simon Willison",
+    "category": "tech",
+    "url": "https://simonwillison.net/atom/everything/"
+  },
+  {
+    "id": "stratechery",
+    "name": "Stratechery",
+    "publisher": "Stratechery",
+    "category": "tech",
+    "url": "https://stratechery.com/feed/"
+  },
+  {
+    "id": "platformer",
+    "name": "Platformer",
+    "publisher": "Platformer",
+    "category": "tech",
+    "url": "https://www.platformer.news/rss/"
+  },
+  {
+    "id": "404-media",
+    "name": "404 Media",
+    "publisher": "404 Media",
+    "category": "tech",
+    "url": "https://www.404media.co/rss/"
+  },
+  {
+    "id": "the-record",
+    "name": "The Record",
+    "publisher": "The Record",
+    "category": "tech",
+    "url": "https://therecord.media/feed/"
+  },
+  {
+    "id": "securityweek",
+    "name": "SecurityWeek",
+    "publisher": "SecurityWeek",
+    "category": "tech",
+    "url": "https://www.securityweek.com/feed/"
+  },
+  {
+    "id": "dark-reading",
+    "name": "Dark Reading",
+    "publisher": "Dark Reading",
+    "category": "tech",
+    "url": "https://www.darkreading.com/rss.xml"
+  },
+  {
+    "id": "schneier-on-security",
+    "name": "Schneier on Security",
+    "publisher": "Schneier on Security",
+    "category": "tech",
+    "url": "https://www.schneier.com/feed/atom/"
+  },
+  {
+    "id": "cyberscoop",
+    "name": "CyberScoop",
+    "publisher": "CyberScoop",
+    "category": "tech",
+    "url": "https://cyberscoop.com/feed/"
+  },
+  {
+    "id": "digital-trends",
+    "name": "Digital Trends",
+    "publisher": "Digital Trends",
+    "category": "tech",
+    "url": "https://www.digitaltrends.com/feed/"
+  },
+  {
+    "id": "tom-s-guide",
+    "name": "Tom's Guide",
+    "publisher": "Tom's Guide",
+    "category": "tech",
+    "url": "https://www.tomsguide.com/feeds/all"
+  },
+  {
+    "id": "phoronix",
+    "name": "Phoronix",
+    "publisher": "Phoronix",
+    "category": "tech",
+    "url": "https://www.phoronix.com/rss.php"
+  },
+  {
+    "id": "lwn",
+    "name": "LWN",
+    "publisher": "LWN",
+    "category": "tech",
+    "url": "https://lwn.net/headlines/rss"
+  },
+  {
+    "id": "techspot",
+    "name": "TechSpot",
+    "publisher": "TechSpot",
+    "category": "tech",
+    "url": "https://www.techspot.com/backend.xml"
+  },
+  {
+    "id": "neowin",
+    "name": "Neowin",
+    "publisher": "Neowin",
+    "category": "tech",
+    "url": "https://www.neowin.net/news/rss/"
+  },
+  {
+    "id": "windows-central",
+    "name": "Windows Central",
+    "publisher": "Windows Central",
+    "category": "tech",
+    "url": "https://www.windowscentral.com/feeds/all"
+  },
+  {
+    "id": "siliconangle",
+    "name": "SiliconANGLE",
+    "publisher": "SiliconANGLE",
+    "category": "tech",
+    "url": "https://siliconangle.com/feed/"
+  },
+  {
+    "id": "geekwire",
+    "name": "GeekWire",
+    "publisher": "GeekWire",
+    "category": "tech",
+    "url": "https://www.geekwire.com/feed/"
+  },
+  {
+    "id": "insideevs",
+    "name": "InsideEVs",
+    "publisher": "InsideEVs",
+    "category": "tech",
+    "url": "https://insideevs.com/rss/news/all/"
+  },
+  {
+    "id": "teslarati",
+    "name": "Teslarati",
+    "publisher": "Teslarati",
+    "category": "tech",
+    "url": "https://www.teslarati.com/feed/"
+  },
+  {
+    "id": "the-verge-ai",
+    "name": "The Verge AI",
+    "publisher": "The Verge",
+    "category": "tech",
+    "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+  },
+  {
+    "id": "ars-technica-ai",
+    "name": "Ars Technica AI",
+    "publisher": "Ars Technica",
+    "category": "tech",
+    "url": "https://feeds.arstechnica.com/arstechnica/technology-lab"
+  },
+  {
+    "id": "the-information",
+    "name": "The Information",
+    "publisher": "The Information",
+    "category": "tech",
+    "url": "https://www.theinformation.com/feed"
+  },
+  {
     "id": "bbc-middle-east",
     "name": "BBC Middle East",
     "publisher": "BBC",
@@ -571,6 +1900,104 @@
     "url": "https://www.middleeastmonitor.com/feed/"
   },
   {
+    "id": "daily-sabah",
+    "name": "Daily Sabah",
+    "publisher": "Daily Sabah",
+    "category": "mideast",
+    "url": "https://www.dailysabah.com/rss/home"
+  },
+  {
+    "id": "hurriyet-daily-news",
+    "name": "Hurriyet Daily News",
+    "publisher": "Hurriyet Daily News",
+    "category": "mideast",
+    "url": "https://www.hurriyetdailynews.com/rss/news"
+  },
+  {
+    "id": "tehran-times",
+    "name": "Tehran Times",
+    "publisher": "Tehran Times",
+    "category": "mideast",
+    "url": "https://www.tehrantimes.com/rss"
+  },
+  {
+    "id": "iran-international",
+    "name": "Iran International",
+    "publisher": "Iran International",
+    "category": "mideast",
+    "url": "https://www.iranintl.com/en/feed"
+  },
+  {
+    "id": "ynet-news",
+    "name": "Ynet News",
+    "publisher": "Ynet News",
+    "category": "mideast",
+    "url": "https://www.ynetnews.com/Integration/StoryRss3089.xml"
+  },
+  {
+    "id": "jns",
+    "name": "JNS",
+    "publisher": "JNS",
+    "category": "mideast",
+    "url": "https://www.jns.org/feed/"
+  },
+  {
+    "id": "plus972-magazine",
+    "name": "+972 Magazine",
+    "publisher": "+972 Magazine",
+    "category": "mideast",
+    "url": "https://www.972mag.com/feed/"
+  },
+  {
+    "id": "mondoweiss",
+    "name": "Mondoweiss",
+    "publisher": "Mondoweiss",
+    "category": "mideast",
+    "url": "https://mondoweiss.net/feed/"
+  },
+  {
+    "id": "electronic-intifada",
+    "name": "Electronic Intifada",
+    "publisher": "Electronic Intifada",
+    "category": "mideast",
+    "url": "https://electronicintifada.net/rss.xml"
+  },
+  {
+    "id": "france-24-middle-east",
+    "name": "France 24 Middle East",
+    "publisher": "France 24",
+    "category": "mideast",
+    "url": "https://www.france24.com/en/middle-east/rss"
+  },
+  {
+    "id": "iraqi-news",
+    "name": "Iraqi News",
+    "publisher": "Iraqi News",
+    "category": "mideast",
+    "url": "https://www.iraqinews.com/feed/"
+  },
+  {
+    "id": "egypt-independent",
+    "name": "Egypt Independent",
+    "publisher": "Egypt Independent",
+    "category": "mideast",
+    "url": "https://www.egyptindependent.com/feed/"
+  },
+  {
+    "id": "amwaj-media",
+    "name": "Amwaj Media",
+    "publisher": "Amwaj",
+    "category": "mideast",
+    "url": "https://amwaj.media/rss"
+  },
+  {
+    "id": "saudi-gazette",
+    "name": "Saudi Gazette",
+    "publisher": "Saudi Gazette",
+    "category": "mideast",
+    "url": "https://saudigazette.com.sa/rssFeed/74"
+  },
+  {
     "id": "nasa",
     "name": "NASA",
     "publisher": "NASA",
@@ -632,6 +2059,196 @@
     "url": "https://spacenews.com/feed/"
   },
   {
+    "id": "science-news",
+    "name": "Science News",
+    "publisher": "Science",
+    "category": "science",
+    "url": "https://www.science.org/rss/news_current.xml"
+  },
+  {
+    "id": "new-scientist",
+    "name": "New Scientist",
+    "publisher": "New Scientist",
+    "category": "science",
+    "url": "https://www.newscientist.com/feed/home/"
+  },
+  {
+    "id": "scientific-american",
+    "name": "Scientific American",
+    "publisher": "Scientific American",
+    "category": "science",
+    "url": "http://rss.sciam.com/ScientificAmerican-Global"
+  },
+  {
+    "id": "live-science",
+    "name": "Live Science",
+    "publisher": "Live Science",
+    "category": "science",
+    "url": "https://www.livescience.com/feeds/all"
+  },
+  {
+    "id": "space-com",
+    "name": "Space.com",
+    "publisher": "Space.com",
+    "category": "science",
+    "url": "https://www.space.com/feeds/all"
+  },
+  {
+    "id": "quanta-magazine",
+    "name": "Quanta Magazine",
+    "publisher": "Quanta",
+    "category": "science",
+    "url": "https://www.quantamagazine.org/feed/"
+  },
+  {
+    "id": "sciencealert",
+    "name": "ScienceAlert",
+    "publisher": "ScienceAlert",
+    "category": "science",
+    "url": "https://www.sciencealert.com/feed"
+  },
+  {
+    "id": "universe-today",
+    "name": "Universe Today",
+    "publisher": "Universe Today",
+    "category": "science",
+    "url": "https://www.universetoday.com/feed/"
+  },
+  {
+    "id": "popular-science",
+    "name": "Popular Science",
+    "publisher": "Popular Science",
+    "category": "science",
+    "url": "https://www.popsci.com/feed/"
+  },
+  {
+    "id": "smithsonian",
+    "name": "Smithsonian",
+    "publisher": "Smithsonian",
+    "category": "science",
+    "url": "https://www.smithsonianmag.com/rss/latest_articles/"
+  },
+  {
+    "id": "stat-news",
+    "name": "STAT News",
+    "publisher": "STAT",
+    "category": "science",
+    "url": "https://www.statnews.com/feed/"
+  },
+  {
+    "id": "medical-xpress",
+    "name": "Medical Xpress",
+    "publisher": "Medical Xpress",
+    "category": "science",
+    "url": "https://medicalxpress.com/rss-feed/",
+    "interval": 600
+  },
+  {
+    "id": "carbon-brief",
+    "name": "Carbon Brief",
+    "publisher": "Carbon Brief",
+    "category": "science",
+    "url": "https://www.carbonbrief.org/feed/"
+  },
+  {
+    "id": "inside-climate-news",
+    "name": "Inside Climate News",
+    "publisher": "Inside Climate News",
+    "category": "science",
+    "url": "https://insideclimatenews.org/feed/"
+  },
+  {
+    "id": "grist",
+    "name": "Grist",
+    "publisher": "Grist",
+    "category": "science",
+    "url": "https://grist.org/feed/"
+  },
+  {
+    "id": "guardian-science",
+    "name": "Guardian Science",
+    "publisher": "Guardian",
+    "category": "science",
+    "url": "https://www.theguardian.com/science/rss"
+  },
+  {
+    "id": "guardian-environment",
+    "name": "Guardian Environment",
+    "publisher": "Guardian",
+    "category": "science",
+    "url": "https://www.theguardian.com/environment/rss"
+  },
+  {
+    "id": "nyt-climate",
+    "name": "NYT Climate",
+    "publisher": "NYT",
+    "category": "science",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
+  },
+  {
+    "id": "nyt-health",
+    "name": "NYT Health",
+    "publisher": "NYT",
+    "category": "science",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml"
+  },
+  {
+    "id": "bbc-health",
+    "name": "BBC Health",
+    "publisher": "BBC",
+    "category": "science",
+    "url": "https://feeds.bbci.co.uk/news/health/rss.xml"
+  },
+  {
+    "id": "spaceflight-now",
+    "name": "Spaceflight Now",
+    "publisher": "Spaceflight Now",
+    "category": "science",
+    "url": "https://spaceflightnow.com/feed/"
+  },
+  {
+    "id": "nasaspaceflight",
+    "name": "NASASpaceflight",
+    "publisher": "NASASpaceflight",
+    "category": "science",
+    "url": "https://www.nasaspaceflight.com/feed/"
+  },
+  {
+    "id": "nautilus",
+    "name": "Nautilus",
+    "publisher": "Nautilus",
+    "category": "science",
+    "url": "https://nautil.us/feed/"
+  },
+  {
+    "id": "mongabay",
+    "name": "Mongabay",
+    "publisher": "Mongabay",
+    "category": "science",
+    "url": "https://news.mongabay.com/feed/"
+  },
+  {
+    "id": "ars-technica-science",
+    "name": "Ars Technica Science",
+    "publisher": "Ars Technica",
+    "category": "science",
+    "url": "https://feeds.arstechnica.com/arstechnica/science"
+  },
+  {
+    "id": "big-think",
+    "name": "Big Think",
+    "publisher": "Big Think",
+    "category": "science",
+    "url": "https://bigthink.com/feed/"
+  },
+  {
+    "id": "physics-world",
+    "name": "Physics World",
+    "publisher": "Physics World",
+    "category": "science",
+    "url": "https://physicsworld.com/feed/"
+  },
+  {
     "id": "espn",
     "name": "ESPN",
     "publisher": "ESPN",
@@ -686,6 +2303,160 @@
     "publisher": "Fox Sports",
     "category": "sports",
     "url": "https://api.foxsports.com/v2/content/optimized-rss?partnerKey=MB0Wehpmuj2lUhuRhQaafhBjAJqaPU244mlTDK1i&size=30"
+  },
+  {
+    "id": "sb-nation",
+    "name": "SB Nation",
+    "publisher": "SB Nation",
+    "category": "sports",
+    "url": "https://www.sbnation.com/rss/index.xml"
+  },
+  {
+    "id": "profootballtalk",
+    "name": "ProFootballTalk",
+    "publisher": "ProFootballTalk",
+    "category": "sports",
+    "url": "https://profootballtalk.nbcsports.com/feed/"
+  },
+  {
+    "id": "mlb-news",
+    "name": "MLB News",
+    "publisher": "MLB",
+    "category": "sports",
+    "url": "https://www.mlb.com/feeds/news/rss.xml"
+  },
+  {
+    "id": "motorsport-com",
+    "name": "Motorsport.com",
+    "publisher": "Motorsport.com",
+    "category": "sports",
+    "url": "https://www.motorsport.com/rss/all/news/"
+  },
+  {
+    "id": "formula-1",
+    "name": "Formula 1",
+    "publisher": "Formula 1",
+    "category": "sports",
+    "url": "https://www.formula1.com/en/latest/all.xml"
+  },
+  {
+    "id": "bbc-football",
+    "name": "BBC Football",
+    "publisher": "BBC",
+    "category": "sports",
+    "url": "https://feeds.bbci.co.uk/sport/football/rss.xml"
+  },
+  {
+    "id": "guardian-football",
+    "name": "Guardian Football",
+    "publisher": "Guardian",
+    "category": "sports",
+    "url": "https://www.theguardian.com/football/rss"
+  },
+  {
+    "id": "talksport",
+    "name": "talkSPORT",
+    "publisher": "talkSPORT",
+    "category": "sports",
+    "url": "https://talksport.com/feed/"
+  },
+  {
+    "id": "sportsnet",
+    "name": "Sportsnet",
+    "publisher": "Sportsnet",
+    "category": "sports",
+    "url": "https://www.sportsnet.ca/feed/"
+  },
+  {
+    "id": "cbs-sports-nfl",
+    "name": "CBS Sports NFL",
+    "publisher": "CBS",
+    "category": "sports",
+    "url": "https://www.cbssports.com/rss/headlines/nfl/"
+  },
+  {
+    "id": "cbs-sports-nba",
+    "name": "CBS Sports NBA",
+    "publisher": "CBS",
+    "category": "sports",
+    "url": "https://www.cbssports.com/rss/headlines/nba/"
+  },
+  {
+    "id": "yahoo-nfl",
+    "name": "Yahoo NFL",
+    "publisher": "Yahoo",
+    "category": "sports",
+    "url": "https://sports.yahoo.com/nfl/rss/"
+  },
+  {
+    "id": "yahoo-nba",
+    "name": "Yahoo NBA",
+    "publisher": "Yahoo",
+    "category": "sports",
+    "url": "https://sports.yahoo.com/nba/rss/"
+  },
+  {
+    "id": "sky-sports-football",
+    "name": "Sky Sports Football",
+    "publisher": "Sky",
+    "category": "sports",
+    "url": "https://www.skysports.com/rss/11095"
+  },
+  {
+    "id": "bbc-cricket",
+    "name": "BBC Cricket",
+    "publisher": "BBC",
+    "category": "sports",
+    "url": "https://feeds.bbci.co.uk/sport/cricket/rss.xml"
+  },
+  {
+    "id": "bbc-formula-1",
+    "name": "BBC Formula 1",
+    "publisher": "BBC",
+    "category": "sports",
+    "url": "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
+  },
+  {
+    "id": "bbc-tennis",
+    "name": "BBC Tennis",
+    "publisher": "BBC",
+    "category": "sports",
+    "url": "https://feeds.bbci.co.uk/sport/tennis/rss.xml"
+  },
+  {
+    "id": "guardian-us-sports",
+    "name": "Guardian US Sports",
+    "publisher": "Guardian",
+    "category": "sports",
+    "url": "https://www.theguardian.com/sport/us-sport/rss"
+  },
+  {
+    "id": "sporting-news",
+    "name": "Sporting News",
+    "publisher": "Sporting News",
+    "category": "sports",
+    "url": "https://www.sportingnews.com/us/rss"
+  },
+  {
+    "id": "pro-football-network",
+    "name": "Pro Football Network",
+    "publisher": "Pro Football Network",
+    "category": "sports",
+    "url": "https://www.profootballnetwork.com/feed/"
+  },
+  {
+    "id": "cyclingnews",
+    "name": "Cyclingnews",
+    "publisher": "Cyclingnews",
+    "category": "sports",
+    "url": "https://www.cyclingnews.com/feeds/all/"
+  },
+  {
+    "id": "world-soccer-talk",
+    "name": "World Soccer Talk",
+    "publisher": "World Soccer Talk",
+    "category": "sports",
+    "url": "https://worldsoccertalk.com/feed/"
   },
   {
     "id": "reuters",
