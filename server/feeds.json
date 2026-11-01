@@ -171,6 +171,36 @@
     "bust": true
   },
   {
+    "id": "the-intercept",
+    "name": "The Intercept",
+    "publisher": "The Intercept",
+    "category": "us",
+    "url": "https://theintercept.com/feed/?lang=en"
+  },
+  {
+    "id": "reason",
+    "name": "Reason",
+    "publisher": "Reason",
+    "category": "us",
+    "url": "https://reason.com/feed/"
+  },
+  {
+    "id": "vox",
+    "name": "Vox",
+    "publisher": "Vox",
+    "category": "us",
+    "url": "https://www.vox.com/rss/index.xml",
+    "classify": true
+  },
+  {
+    "id": "rolling-stone",
+    "name": "Rolling Stone",
+    "publisher": "Rolling Stone",
+    "category": "us",
+    "url": "https://www.rollingstone.com/feed/",
+    "classify": true
+  },
+  {
     "id": "cnbc-top",
     "name": "CNBC Top",
     "publisher": "CNBC",
@@ -272,6 +302,27 @@
     "url": "https://www.theblock.co/rss.xml"
   },
   {
+    "id": "decrypt",
+    "name": "Decrypt",
+    "publisher": "Decrypt",
+    "category": "markets",
+    "url": "https://decrypt.co/feed"
+  },
+  {
+    "id": "bitcoin-magazine",
+    "name": "Bitcoin Magazine",
+    "publisher": "Bitcoin Magazine",
+    "category": "markets",
+    "url": "https://bitcoinmagazine.com/.rss/full/"
+  },
+  {
+    "id": "cryptoslate",
+    "name": "CryptoSlate",
+    "publisher": "CryptoSlate",
+    "category": "markets",
+    "url": "https://cryptoslate.com/feed/"
+  },
+  {
     "id": "hacker-news",
     "name": "Hacker News",
     "publisher": "Hacker News",
@@ -370,6 +421,69 @@
     "bust": true
   },
   {
+    "id": "gizmodo",
+    "name": "Gizmodo",
+    "publisher": "Gizmodo",
+    "category": "tech",
+    "url": "https://gizmodo.com/feed"
+  },
+  {
+    "id": "mashable",
+    "name": "Mashable",
+    "publisher": "Mashable",
+    "category": "tech",
+    "url": "https://mashable.com/feeds/rss/all"
+  },
+  {
+    "id": "slashdot",
+    "name": "Slashdot",
+    "publisher": "Slashdot",
+    "category": "tech",
+    "url": "https://rss.slashdot.org/Slashdot/slashdotMain"
+  },
+  {
+    "id": "techmeme",
+    "name": "Techmeme",
+    "publisher": "Techmeme",
+    "category": "tech",
+    "url": "https://www.techmeme.com/feed.xml"
+  },
+  {
+    "id": "electrek",
+    "name": "Electrek",
+    "publisher": "Electrek",
+    "category": "tech",
+    "url": "https://electrek.co/feed/"
+  },
+  {
+    "id": "9to5google",
+    "name": "9to5Google",
+    "publisher": "9to5Google",
+    "category": "tech",
+    "url": "https://9to5google.com/feed/"
+  },
+  {
+    "id": "bleepingcomputer",
+    "name": "BleepingComputer",
+    "publisher": "BleepingComputer",
+    "category": "tech",
+    "url": "https://www.bleepingcomputer.com/feed/"
+  },
+  {
+    "id": "krebs-on-security",
+    "name": "Krebs on Security",
+    "publisher": "Krebs on Security",
+    "category": "tech",
+    "url": "https://krebsonsecurity.com/feed/"
+  },
+  {
+    "id": "the-hacker-news",
+    "name": "The Hacker News",
+    "publisher": "The Hacker News",
+    "category": "tech",
+    "url": "https://feeds.feedburner.com/TheHackersNews"
+  },
+  {
     "id": "bbc-middle-east",
     "name": "BBC Middle East",
     "publisher": "BBC",
@@ -443,6 +557,20 @@
     "url": "https://www.haaretz.com/srv/haaretz-latest-headlines"
   },
   {
+    "id": "middle-east-eye",
+    "name": "Middle East Eye",
+    "publisher": "Middle East Eye",
+    "category": "mideast",
+    "url": "https://www.middleeasteye.net/rss"
+  },
+  {
+    "id": "middle-east-monitor",
+    "name": "Middle East Monitor",
+    "publisher": "Middle East Monitor",
+    "category": "mideast",
+    "url": "https://www.middleeastmonitor.com/feed/"
+  },
+  {
     "id": "nasa",
     "name": "NASA",
     "publisher": "NASA",
@@ -479,6 +607,28 @@
     "publisher": "BBC",
     "category": "science",
     "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+  },
+  {
+    "id": "the-conversation",
+    "name": "The Conversation",
+    "publisher": "The Conversation",
+    "category": "science",
+    "url": "https://theconversation.com/us/articles.atom",
+    "classify": true
+  },
+  {
+    "id": "phys-org",
+    "name": "Phys.org",
+    "publisher": "Phys.org",
+    "category": "science",
+    "url": "https://phys.org/rss-feed/"
+  },
+  {
+    "id": "spacenews",
+    "name": "SpaceNews",
+    "publisher": "SpaceNews",
+    "category": "science",
+    "url": "https://spacenews.com/feed/"
   },
   {
     "id": "espn",
