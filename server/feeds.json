@@ -621,7 +621,8 @@
     "name": "Phys.org",
     "publisher": "Phys.org",
     "category": "science",
-    "url": "https://phys.org/rss-feed/"
+    "url": "https://phys.org/rss-feed/",
+    "interval": 600
   },
   {
     "id": "spacenews",
